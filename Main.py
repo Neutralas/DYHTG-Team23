@@ -6,7 +6,8 @@ from PIL import Image
 import os
 
 def main():
-    clean_folders()
+    reduce_dir(size=16)
+    #clean_folders()
     print("The AI needs 5 prompts to generate images that will plague your nightmares....")
     for i in range(5):
         valid = False
@@ -15,7 +16,7 @@ def main():
             try:
                 generate(user_input ,1)
                 valid = True
-            except:
+            except Exception as e:
                 print("trying again")
     reduce_dir()
     set_block_imgs(['stone.png','granite.png','diorite.png','andesite.png','deepslate.png'])
@@ -47,11 +48,12 @@ def generate(prompt, output_size):
 
 def generate_img(prompt,num):
     img_file = os.getcwd() + '\\new_images'
-    client = replicate.Client(api_token="8910d96eba000f2d0283ea6209d6bed2c214be19")
+    client = replicate.Client(api_token="3a7ca8c73be5a611ab2c01d84cbe4b7db3ae84e3")
     model = client.models.get("stability-ai/stable-diffusion")
     try:
         output = model.predict(prompt=prompt)
-    except:
+    except Exception as e:
+        print(e)
         print("AI api crashed")
         raise Exception("AI crash")
     res  = requests.get(output[0], stream = True)
