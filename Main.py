@@ -6,6 +6,7 @@ from PIL import Image
 import os
 
 def main():
+    clean_folders()
     print("The AI needs 5 prompts to generate images that will plague your nightmares....")
     for i in range(5):
         valid = False
@@ -74,6 +75,14 @@ def set_block_imgs(block_names, img_folder='scaled_images'):
         os.remove(f'{block_img_location}\\{name}')
         # save new block with the name of the old block
         new_block.save(f'{block_img_location}\\{name}')
+
+def clean_folders():
+    new_images = os.getcwd() + '\\new_images'
+    scaled_images = os.getcwd() + f'\\scaled_images'
+    for elt in os.listdir(new_images):
+        os.remove(new_images + f'\\{elt}')
+    for elt in os.listdir(scaled_images):
+        os.remove(scaled_images + f'\\{elt}')
 
 if __name__ == "__main__":
     main()
