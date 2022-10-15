@@ -6,9 +6,18 @@ from PIL import Image
 import os
 
 def main():
-    generate("chair" ,1)
+    print("The AI needs 5 prompts to generate images that will plague your nightmares....")
+    for i in range(5):
+        valid = False
+        while not valid:
+            user_input = input(f"Prompt nº {i}: ")
+            try:
+                generate(user_input ,1)
+                valid = True
+            except:
+                print("trying again")
     reduce_dir()
-    set_block_imgs(['bedrock.png'])
+    set_block_imgs(['stone.png','granite.png','diorite.png','andesite.png','deepslate.png'])
 
 def reduce_dir(folder_name='new_images', size=256):
     folder_as_dir = os.getcwd() + '\\' + folder_name
@@ -37,15 +46,19 @@ def generate(prompt, output_size):
 
 def generate_img(prompt,num):
     img_file = os.getcwd() + '\\new_images'
-    client = replicate.Client(api_token="fb98523b00914a49e3915e571bebe762f1d18827")
+    client = replicate.Client(api_token="8910d96eba000f2d0283ea6209d6bed2c214be19")
     model = client.models.get("stability-ai/stable-diffusion")
-    output = model.predict(prompt=prompt)
+    try:
+        output = model.predict(prompt=prompt)
+    except:
+        print("AI api crashed")
+        raise Exception("AI crash")
     res  = requests.get(output[0], stream = True)
     if res.status_code == 200:
         with open(f'{img_file}\\{prompt}{num}.png', 'wb') as f:
             #change where image gets saved to.
             shutil.copyfileobj(res.raw, f)
-            print(f'Image {num} downloaded')
+            print(f'{prompt} image generated')
     else:
         print(f'Image {num} could not be downloaded')
 
