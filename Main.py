@@ -6,7 +6,7 @@ from PIL import Image
 import os
 
 def main():
-    generate("dog" ,1)
+    generate("chair" ,1)
     reduce_dir()
     set_block_imgs(['bedrock.png'])
 
@@ -27,8 +27,6 @@ def reduce_dir(folder_name='new_images', size=256):
 
     #change where images go to.
     new_folder_dir = os.getcwd() + f'\\scaled_images'
-    if f'resized_{folder_name}' not in os.listdir(os.getcwd()):
-        os.mkdir(new_folder_dir)
     for i in range(len(reduced_imgs)):
         reduced_imgs[i].save(new_folder_dir + '\\resized_' + img_names[i])
 
@@ -58,7 +56,7 @@ def set_block_imgs(block_names, img_folder='scaled_images'):
     # for blocks in the name list
     for i,name in enumerate(block_names):
         # get the next image in our new_images file
-        new_block = Image.open(new_img_location + os.listdir(img_folder)[i])
+        new_block = Image.open(new_img_location + '\\' +os.listdir(img_folder)[i])
         # delete old file
         os.remove(f'{block_img_location}\\{name}')
         # save new block with the name of the old block
