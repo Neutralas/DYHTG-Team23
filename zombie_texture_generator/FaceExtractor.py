@@ -86,7 +86,7 @@ class FaceExtractor():
             if i  == 1:
                 cv2.imwrite(self.output + "zombie.png", base_img)
             else:
-                cv2.imwrite(self.output + "zombie" + str(i+1 + ".png", base_img)
+                cv2.imwrite(self.output + "zombie" + str(i+1 + ".png", base_img))
 
     def _generate_perlin_noise_2d(shape, res):
         def f(t):
