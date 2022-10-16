@@ -8,6 +8,7 @@ import numpy as np
 from imutils.face_utils import rect_to_bb
 import dlib
 from FaceAligner import FaceAligner
+from distutils.dir_util import copy_tree
 
 np.set_printoptions(threshold=sys.maxsize)
 
@@ -15,7 +16,7 @@ class FaceExtractor():
 
     def __init__(self, directory,desiredFaceWidth=256):
         self.directory = directory
-        self.output =  "zombie_skins/"
+        self.output =  "optifine/random/entity/zombie_skins/"
         self.images = []
         self.faces = []
         self.desiredFaceWidth = desiredFaceWidth
@@ -64,13 +65,13 @@ class FaceExtractor():
         face_start_pos = (64, 64)
         face_end_pos = (128, 128)
         dim = (64, 64)
+        print("Applying faces to zombies...")
         for i, face in enumerate(self.faces):
             base_img = cv2.imread("images/zombie.png", cv2.IMREAD_UNCHANGED)
             resized = cv2.resize(face, dim, interpolation=cv2.INTER_AREA)
             #make a true false mask of resized
             mask = np.average(resized,axis=2) > 10
 
-            print('mask',mask.shape)
             #make a blood like mask
             blood_mask = FaceExtractor._generate_perlin_noise_2d((64, 64), (4, 4))
             blood_mask[~mask] = 0
@@ -86,7 +87,9 @@ class FaceExtractor():
             if i  == 1:
                 cv2.imwrite(self.output + "zombie.png", base_img)
             else:
-                cv2.imwrite(self.output + "zombie" + str(i+1 + ".png", base_img))
+                cv2.imwrite(self.output + "zombie" + str(i+1) + ".png", base_img)
+
+        self.copy_folder()
 
     def _generate_perlin_noise_2d(shape, res):
         def f(t):
@@ -112,3 +115,7 @@ class FaceExtractor():
         n0 = n00 * (1 - t[:, :, 0]) + t[:, :, 0] * n10
         n1 = n01 * (1 - t[:, :, 0]) + t[:, :, 0] * n11
         return np.sqrt(2) * ((1 - t[:, :, 1]) * n0 + t[:, :, 1] * n1)
+
+    def copy_folder(self):
+        copy_tree("optifine/random/entity/zombie_skins", 
+                  "C:/Users/jonai/AppData/Roaming/.minecraft/resourcepacks/scary_pack/assets/minecraft")

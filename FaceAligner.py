@@ -18,15 +18,9 @@ class FaceAligner:
         if self.desiredFaceHeight is None:
             self.desiredFaceHeight = self.desiredFaceWidth
 
-
-
-
-
     def align(self, image, gray, rect):
-# convert the landmark (x, y)-coordinates to a NumPy array
+        # convert the landmark (x, y)-coordinates to a NumPy array
         shape = self.predictor(gray, rect)
-
-
         landmarks = np.array([[p.x, p.y] for p in shape.parts()])
         outline = landmarks[[*range(17), *range(26,16,-1)]]
         Y, X = skimage.draw.polygon(outline[:,1], outline[:,0])

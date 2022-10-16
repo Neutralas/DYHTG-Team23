@@ -42,7 +42,8 @@ fill ~37 ~ ~0 ~37 ~7 ~0 black_concrete
 fill ~38 ~ ~0 ~38 ~7 ~0 black_concrete
 fill ~39 ~ ~0 ~39 ~7 ~0 black_concrete
 fill ~40 ~ ~0 ~40 ~7 ~0 black_concrete
-fill ~0 ~ ~1 ~0 ~7 ~1 black_concrete
+fill ~0 ~2 ~1 ~0 ~7 ~1 black_concrete
+fill ~0 ~-1 ~1 ~0 ~-1 ~1 command_block{Command:'playsound minecraft:music.game music @a'}
 fill ~12 ~ ~1 ~12 ~7 ~1 black_concrete
 fill ~16 ~ ~1 ~16 ~7 ~1 black_concrete
 fill ~20 ~ ~1 ~20 ~7 ~1 black_concrete
@@ -443,7 +444,8 @@ fill ~0 ~ ~39 ~0 ~7 ~39 black_concrete
 fill ~4 ~ ~39 ~4 ~7 ~39 black_concrete
 fill ~8 ~ ~39 ~8 ~7 ~39 black_concrete
 fill ~24 ~ ~39 ~24 ~7 ~39 black_concrete
-fill ~40 ~ ~39 ~40 ~7 ~39 black_concrete
+fill ~40 ~2 ~39 ~40 ~7 ~39 black_concrete
+fill ~40 ~-1 ~39 ~40 ~-1 ~39 command_block{Command:'playsound minecraft:music.dragon master @a'}
 fill ~0 ~ ~40 ~0 ~7 ~40 black_concrete
 fill ~1 ~ ~40 ~1 ~7 ~40 black_concrete
 fill ~2 ~ ~40 ~2 ~7 ~40 black_concrete

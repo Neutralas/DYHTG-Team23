@@ -1,3 +1,11 @@
+spawnpoint
+give @a diamond_sword
+give @a diamond_chestplate
+give @a diamond_helmet
+give @a diamond_leggings
+give @a diamond_boots
+give @a cooked_porkchop 64
+effect give @a fire_resistance 5000
 # Clear maze blocks
 fill ~0 ~ ~0 ~40 ~7 ~40 air
 # Fill maze blocks
@@ -42,7 +50,8 @@ fill ~37 ~ ~0 ~37 ~7 ~0 black_concrete
 fill ~38 ~ ~0 ~38 ~7 ~0 black_concrete
 fill ~39 ~ ~0 ~39 ~7 ~0 black_concrete
 fill ~40 ~ ~0 ~40 ~7 ~0 black_concrete
-fill ~0 ~ ~1 ~0 ~7 ~1 black_concrete
+fill ~0 ~2 ~1 ~0 ~7 ~1 black_concrete
+fill ~0 ~-1 ~1 ~0 ~-1 ~1 command_block{Command:'playsound minecraft:music.game music @a'}
 fill ~12 ~ ~1 ~12 ~7 ~1 black_concrete
 fill ~16 ~ ~1 ~16 ~7 ~1 black_concrete
 fill ~20 ~ ~1 ~20 ~7 ~1 black_concrete
@@ -443,7 +452,8 @@ fill ~0 ~ ~39 ~0 ~7 ~39 black_concrete
 fill ~4 ~ ~39 ~4 ~7 ~39 black_concrete
 fill ~8 ~ ~39 ~8 ~7 ~39 black_concrete
 fill ~24 ~ ~39 ~24 ~7 ~39 black_concrete
-fill ~40 ~ ~39 ~40 ~7 ~39 black_concrete
+fill ~40 ~2 ~39 ~40 ~7 ~39 black_concrete
+fill ~40 ~-1 ~39 ~40 ~-1 ~39 command_block{Command:'playsound minecraft:music.dragon master @a'}
 fill ~0 ~ ~40 ~0 ~7 ~40 black_concrete
 fill ~1 ~ ~40 ~1 ~7 ~40 black_concrete
 fill ~2 ~ ~40 ~2 ~7 ~40 black_concrete
@@ -485,513 +495,1945 @@ fill ~37 ~ ~40 ~37 ~7 ~40 black_concrete
 fill ~38 ~ ~40 ~38 ~7 ~40 black_concrete
 fill ~39 ~ ~40 ~39 ~7 ~40 black_concrete
 fill ~40 ~ ~40 ~40 ~7 ~40 black_concrete
+
 # Generate the roof
 fill ~0 ~8 ~0 ~40 ~8 ~40 black_concrete
 
-# Generate random commands blocks in the floor
-fill ~0 ~-1 ~0 ~10 ~-1 ~10 command_block{Command:"fill ~ ~2 ~ ~ ~2 ~ cobweb"} replace grass_block
-fill ~10 ~-1 ~10 ~20 ~-1 ~20 command_block{Command:"setblock ~ ~ ~ spawner"} replace grass_block
-fill ~20 ~-1 ~20 ~30 ~-1 ~30 command_block{Command:"fill ~ ~2 ~ ~ ~2 ~ cobweb"} replace grass_block
-fill ~30 ~-1 ~30 ~40 ~-1 ~40 command_block{Command:"setblock ~ ~ ~ glowstone"} replace grass_block
-
-fill ~10 ~-1 ~0 ~20 ~-1 ~10 command_block{Command:"fill ~ ~2 ~ ~ ~2 ~ cobweb"} replace grass_block
-fill ~20 ~-1 ~0 ~30 ~-1 ~10 command_block{Command:"setblock ~ ~ ~ glowstone"} replace grass_block
-fill ~30 ~-1 ~0 ~40 ~-1 ~10 command_block{Command:"setblock ~ ~ ~ spawner"} replace grass_block
-
-fill ~0 ~-1 ~10 ~10 ~-1 ~20 command_block{Command:"setblock ~ ~ ~ glowstone"} replace grass_block
-fill ~0 ~-1 ~10 ~20 ~-1 ~30 command_block{Command:"fill ~ ~ ~ ~10 ~10 ~10 stone replace black_concrete"} replace grass_block
-fill ~0 ~-1 ~10 ~30 ~-1 ~40 command_block{Command:"setblock ~ ~ ~ glowstone"} replace grass_block
-
-fill ~20 ~-1 ~10 ~30 ~-1 ~20 command_block{Command:"setblock ~ ~ ~ spawner"} replace grass_block
-fill ~30 ~-1 ~10 ~40 ~-1 ~20 command_block{Command:"fill ~ ~2 ~ ~ ~2 ~ cobweb"} replace grass_block
-fill ~30 ~-1 ~20 ~40 ~-1 ~30 command_block{Command:"setblock ~ ~ ~ glowstone"} replace grass_block
-
-fill ~10 ~-1 ~20 ~20 ~-1 ~30 command_block{Command:"setblock ~ ~ ~ glowstone"} replace grass_block
-fill ~10 ~-1 ~30 ~20 ~-1 ~40 command_block{Command:"fill ~ ~ ~ ~10 ~10 ~10 stone replace black_concrete"} replace grass_block
-fill ~20 ~-1 ~30 ~30 ~-1 ~40 command_block{Command:"setblock ~ ~ ~ spawner"} replace grass_block
-
-# Generate pressure plates
-fill ~20 ~ ~0 ~0 ~0 ~0 diamond_pressure_plate keep
-fill ~1 ~ ~0 ~1 ~0 ~0 diamond_pressure_plate keep
-fill ~2 ~ ~0 ~2 ~0 ~0 diamond_pressure_plate keep
-fill ~3 ~ ~0 ~3 ~0 ~0 diamond_pressure_plate keep
-fill ~4 ~ ~0 ~4 ~0 ~0 diamond_pressure_plate keep
-fill ~5 ~ ~0 ~5 ~0 ~0 diamond_pressure_plate keep
-fill ~6 ~ ~0 ~6 ~0 ~0 diamond_pressure_plate keep
-fill ~7 ~ ~0 ~7 ~0 ~0 diamond_pressure_plate keep
-fill ~8 ~ ~0 ~8 ~0 ~0 diamond_pressure_plate keep
-fill ~9 ~ ~0 ~9 ~0 ~0 diamond_pressure_plate keep
-fill ~10 ~ ~0 ~10 ~0 ~0 diamond_pressure_plate keep
-fill ~11 ~ ~0 ~11 ~0 ~0 diamond_pressure_plate keep
-fill ~12 ~ ~0 ~12 ~0 ~0 diamond_pressure_plate keep
-fill ~13 ~ ~0 ~13 ~0 ~0 diamond_pressure_plate keep
-fill ~14 ~ ~0 ~14 ~0 ~0 diamond_pressure_plate keep
-fill ~15 ~ ~0 ~15 ~0 ~0 diamond_pressure_plate keep
-fill ~16 ~ ~0 ~16 ~0 ~0 diamond_pressure_plate keep
-fill ~17 ~ ~0 ~17 ~0 ~0 diamond_pressure_plate keep
-fill ~18 ~ ~0 ~18 ~0 ~0 diamond_pressure_plate keep
-fill ~19 ~ ~0 ~19 ~0 ~0 diamond_pressure_plate keep
-fill ~20 ~ ~0 ~20 ~0 ~0 diamond_pressure_plate keep
-fill ~21 ~ ~0 ~21 ~0 ~0 diamond_pressure_plate keep
-fill ~22 ~ ~0 ~22 ~0 ~0 diamond_pressure_plate keep
-fill ~23 ~ ~0 ~23 ~0 ~0 diamond_pressure_plate keep
-fill ~24 ~ ~0 ~24 ~0 ~0 diamond_pressure_plate keep
-fill ~25 ~ ~0 ~25 ~0 ~0 diamond_pressure_plate keep
-fill ~26 ~ ~0 ~26 ~0 ~0 diamond_pressure_plate keep
-fill ~27 ~ ~0 ~27 ~0 ~0 diamond_pressure_plate keep
-fill ~28 ~ ~0 ~28 ~0 ~0 diamond_pressure_plate keep
-fill ~29 ~ ~0 ~29 ~0 ~0 diamond_pressure_plate keep
-fill ~30 ~ ~0 ~30 ~0 ~0 diamond_pressure_plate keep
-fill ~31 ~ ~0 ~31 ~0 ~0 diamond_pressure_plate keep
-fill ~32 ~ ~0 ~32 ~0 ~0 diamond_pressure_plate keep
-fill ~33 ~ ~0 ~33 ~0 ~0 diamond_pressure_plate keep
-fill ~34 ~ ~0 ~34 ~0 ~0 diamond_pressure_plate keep
-fill ~35 ~ ~0 ~35 ~0 ~0 diamond_pressure_plate keep
-fill ~36 ~ ~0 ~36 ~0 ~0 diamond_pressure_plate keep
-fill ~37 ~ ~0 ~37 ~0 ~0 diamond_pressure_plate keep
-fill ~38 ~ ~0 ~38 ~0 ~0 diamond_pressure_plate keep
-fill ~39 ~ ~0 ~39 ~0 ~0 diamond_pressure_plate keep
-fill ~40 ~ ~0 ~40 ~0 ~0 diamond_pressure_plate keep
-fill ~0 ~ ~1 ~0 ~0 ~1 diamond_pressure_plate keep
-fill ~4 ~ ~1 ~4 ~0 ~1 diamond_pressure_plate keep
-fill ~8 ~ ~1 ~8 ~0 ~1 diamond_pressure_plate keep
-fill ~12 ~ ~1 ~12 ~0 ~1 diamond_pressure_plate keep
-fill ~16 ~ ~1 ~16 ~0 ~1 diamond_pressure_plate keep
-fill ~20 ~ ~1 ~20 ~0 ~1 diamond_pressure_plate keep
-fill ~28 ~ ~1 ~28 ~0 ~1 diamond_pressure_plate keep
-fill ~32 ~ ~1 ~32 ~0 ~1 diamond_pressure_plate keep
-fill ~36 ~ ~1 ~36 ~0 ~1 diamond_pressure_plate keep
-fill ~40 ~ ~1 ~40 ~0 ~1 diamond_pressure_plate keep
-fill ~0 ~ ~2 ~0 ~0 ~2 diamond_pressure_plate keep
-fill ~4 ~ ~2 ~4 ~0 ~2 diamond_pressure_plate keep
-fill ~8 ~ ~2 ~8 ~0 ~2 diamond_pressure_plate keep
-fill ~12 ~ ~2 ~12 ~0 ~2 diamond_pressure_plate keep
-fill ~16 ~ ~2 ~16 ~0 ~2 diamond_pressure_plate keep
-fill ~20 ~ ~2 ~20 ~0 ~2 diamond_pressure_plate keep
-fill ~28 ~ ~2 ~28 ~0 ~2 diamond_pressure_plate keep
-fill ~32 ~ ~2 ~32 ~0 ~2 diamond_pressure_plate keep
-fill ~36 ~ ~2 ~36 ~0 ~2 diamond_pressure_plate keep
-fill ~40 ~ ~2 ~40 ~0 ~2 diamond_pressure_plate keep
-fill ~0 ~ ~3 ~0 ~0 ~3 diamond_pressure_plate keep
-fill ~4 ~ ~3 ~4 ~0 ~3 diamond_pressure_plate keep
-fill ~8 ~ ~3 ~8 ~0 ~3 diamond_pressure_plate keep
-fill ~12 ~ ~3 ~12 ~0 ~3 diamond_pressure_plate keep
-fill ~16 ~ ~3 ~16 ~0 ~3 diamond_pressure_plate keep
-fill ~20 ~ ~3 ~20 ~0 ~3 diamond_pressure_plate keep
-fill ~28 ~ ~3 ~28 ~0 ~3 diamond_pressure_plate keep
-fill ~32 ~ ~3 ~32 ~0 ~3 diamond_pressure_plate keep
-fill ~36 ~ ~3 ~36 ~0 ~3 diamond_pressure_plate keep
-fill ~40 ~ ~3 ~40 ~0 ~3 diamond_pressure_plate keep
-fill ~0 ~ ~4 ~0 ~0 ~4 diamond_pressure_plate keep
-fill ~4 ~ ~4 ~4 ~0 ~4 diamond_pressure_plate keep
-fill ~8 ~ ~4 ~8 ~0 ~4 diamond_pressure_plate keep
-fill ~12 ~ ~4 ~12 ~0 ~4 diamond_pressure_plate keep
-fill ~16 ~ ~4 ~16 ~0 ~4 diamond_pressure_plate keep
-fill ~20 ~ ~4 ~20 ~0 ~4 diamond_pressure_plate keep
-fill ~24 ~ ~4 ~24 ~0 ~4 diamond_pressure_plate keep
-fill ~25 ~ ~4 ~25 ~0 ~4 diamond_pressure_plate keep
-fill ~26 ~ ~4 ~26 ~0 ~4 diamond_pressure_plate keep
-fill ~27 ~ ~4 ~27 ~0 ~4 diamond_pressure_plate keep
-fill ~28 ~ ~4 ~28 ~0 ~4 diamond_pressure_plate keep
-fill ~32 ~ ~4 ~32 ~0 ~4 diamond_pressure_plate keep
-fill ~36 ~ ~4 ~36 ~0 ~4 diamond_pressure_plate keep
-fill ~40 ~ ~4 ~40 ~0 ~4 diamond_pressure_plate keep
-fill ~0 ~ ~5 ~0 ~0 ~5 diamond_pressure_plate keep
-fill ~8 ~ ~5 ~8 ~0 ~5 diamond_pressure_plate keep
-fill ~20 ~ ~5 ~20 ~0 ~5 diamond_pressure_plate keep
-fill ~28 ~ ~5 ~28 ~0 ~5 diamond_pressure_plate keep
-fill ~32 ~ ~5 ~32 ~0 ~5 diamond_pressure_plate keep
-fill ~40 ~ ~5 ~40 ~0 ~5 diamond_pressure_plate keep
-fill ~0 ~ ~6 ~0 ~0 ~6 diamond_pressure_plate keep
-fill ~8 ~ ~6 ~8 ~0 ~6 diamond_pressure_plate keep
-fill ~20 ~ ~6 ~20 ~0 ~6 diamond_pressure_plate keep
-fill ~28 ~ ~6 ~28 ~0 ~6 diamond_pressure_plate keep
-fill ~32 ~ ~6 ~32 ~0 ~6 diamond_pressure_plate keep
-fill ~40 ~ ~6 ~40 ~0 ~6 diamond_pressure_plate keep
-fill ~0 ~ ~7 ~0 ~0 ~7 diamond_pressure_plate keep
-fill ~8 ~ ~7 ~8 ~0 ~7 diamond_pressure_plate keep
-fill ~20 ~ ~7 ~20 ~0 ~7 diamond_pressure_plate keep
-fill ~28 ~ ~7 ~28 ~0 ~7 diamond_pressure_plate keep
-fill ~32 ~ ~7 ~32 ~0 ~7 diamond_pressure_plate keep
-fill ~40 ~ ~7 ~40 ~0 ~7 diamond_pressure_plate keep
-fill ~0 ~ ~8 ~0 ~0 ~8 diamond_pressure_plate keep
-fill ~4 ~ ~8 ~4 ~0 ~8 diamond_pressure_plate keep
-fill ~8 ~ ~8 ~8 ~0 ~8 diamond_pressure_plate keep
-fill ~12 ~ ~8 ~12 ~0 ~8 diamond_pressure_plate keep
-fill ~16 ~ ~8 ~16 ~0 ~8 diamond_pressure_plate keep
-fill ~17 ~ ~8 ~17 ~0 ~8 diamond_pressure_plate keep
-fill ~18 ~ ~8 ~18 ~0 ~8 diamond_pressure_plate keep
-fill ~19 ~ ~8 ~19 ~0 ~8 diamond_pressure_plate keep
-fill ~20 ~ ~8 ~20 ~0 ~8 diamond_pressure_plate keep
-fill ~21 ~ ~8 ~21 ~0 ~8 diamond_pressure_plate keep
-fill ~22 ~ ~8 ~22 ~0 ~8 diamond_pressure_plate keep
-fill ~23 ~ ~8 ~23 ~0 ~8 diamond_pressure_plate keep
-fill ~24 ~ ~8 ~24 ~0 ~8 diamond_pressure_plate keep
-fill ~28 ~ ~8 ~28 ~0 ~8 diamond_pressure_plate keep
-fill ~32 ~ ~8 ~32 ~0 ~8 diamond_pressure_plate keep
-fill ~33 ~ ~8 ~33 ~0 ~8 diamond_pressure_plate keep
-fill ~34 ~ ~8 ~34 ~0 ~8 diamond_pressure_plate keep
-fill ~35 ~ ~8 ~35 ~0 ~8 diamond_pressure_plate keep
-fill ~36 ~ ~8 ~36 ~0 ~8 diamond_pressure_plate keep
-fill ~40 ~ ~8 ~40 ~0 ~8 diamond_pressure_plate keep
-fill ~0 ~ ~9 ~0 ~0 ~9 diamond_pressure_plate keep
-fill ~4 ~ ~9 ~4 ~0 ~9 diamond_pressure_plate keep
-fill ~8 ~ ~9 ~8 ~0 ~9 diamond_pressure_plate keep
-fill ~12 ~ ~9 ~12 ~0 ~9 diamond_pressure_plate keep
-fill ~16 ~ ~9 ~16 ~0 ~9 diamond_pressure_plate keep
-fill ~20 ~ ~9 ~20 ~0 ~9 diamond_pressure_plate keep
-fill ~32 ~ ~9 ~32 ~0 ~9 diamond_pressure_plate keep
-fill ~40 ~ ~9 ~40 ~0 ~9 diamond_pressure_plate keep
-fill ~0 ~ ~10 ~0 ~0 ~10 diamond_pressure_plate keep
-fill ~4 ~ ~10 ~4 ~0 ~10 diamond_pressure_plate keep
-fill ~8 ~ ~10 ~8 ~0 ~10 diamond_pressure_plate keep
-fill ~12 ~ ~10 ~12 ~0 ~10 diamond_pressure_plate keep
-fill ~16 ~ ~10 ~16 ~0 ~10 diamond_pressure_plate keep
-fill ~20 ~ ~10 ~20 ~0 ~10 diamond_pressure_plate keep
-fill ~32 ~ ~10 ~32 ~0 ~10 diamond_pressure_plate keep
-fill ~40 ~ ~10 ~40 ~0 ~10 diamond_pressure_plate keep
-fill ~0 ~ ~11 ~0 ~0 ~11 diamond_pressure_plate keep
-fill ~4 ~ ~11 ~4 ~0 ~11 diamond_pressure_plate keep
-fill ~8 ~ ~11 ~8 ~0 ~11 diamond_pressure_plate keep
-fill ~12 ~ ~11 ~12 ~0 ~11 diamond_pressure_plate keep
-fill ~16 ~ ~11 ~16 ~0 ~11 diamond_pressure_plate keep
-fill ~20 ~ ~11 ~20 ~0 ~11 diamond_pressure_plate keep
-fill ~32 ~ ~11 ~32 ~0 ~11 diamond_pressure_plate keep
-fill ~40 ~ ~11 ~40 ~0 ~11 diamond_pressure_plate keep
-fill ~0 ~ ~12 ~0 ~0 ~12 diamond_pressure_plate keep
-fill ~4 ~ ~12 ~4 ~0 ~12 diamond_pressure_plate keep
-fill ~5 ~ ~12 ~5 ~0 ~12 diamond_pressure_plate keep
-fill ~6 ~ ~12 ~6 ~0 ~12 diamond_pressure_plate keep
-fill ~7 ~ ~12 ~7 ~0 ~12 diamond_pressure_plate keep
-fill ~8 ~ ~12 ~8 ~0 ~12 diamond_pressure_plate keep
-fill ~9 ~ ~12 ~9 ~0 ~12 diamond_pressure_plate keep
-fill ~10 ~ ~12 ~10 ~0 ~12 diamond_pressure_plate keep
-fill ~11 ~ ~12 ~11 ~0 ~12 diamond_pressure_plate keep
-fill ~12 ~ ~12 ~12 ~0 ~12 diamond_pressure_plate keep
-fill ~16 ~ ~12 ~16 ~0 ~12 diamond_pressure_plate keep
-fill ~20 ~ ~12 ~20 ~0 ~12 diamond_pressure_plate keep
-fill ~24 ~ ~12 ~24 ~0 ~12 diamond_pressure_plate keep
-fill ~28 ~ ~12 ~28 ~0 ~12 diamond_pressure_plate keep
-fill ~29 ~ ~12 ~29 ~0 ~12 diamond_pressure_plate keep
-fill ~30 ~ ~12 ~30 ~0 ~12 diamond_pressure_plate keep
-fill ~31 ~ ~12 ~31 ~0 ~12 diamond_pressure_plate keep
-fill ~32 ~ ~12 ~32 ~0 ~12 diamond_pressure_plate keep
-fill ~36 ~ ~12 ~36 ~0 ~12 diamond_pressure_plate keep
-fill ~37 ~ ~12 ~37 ~0 ~12 diamond_pressure_plate keep
-fill ~38 ~ ~12 ~38 ~0 ~12 diamond_pressure_plate keep
-fill ~39 ~ ~12 ~39 ~0 ~12 diamond_pressure_plate keep
-fill ~40 ~ ~12 ~40 ~0 ~12 diamond_pressure_plate keep
-fill ~0 ~ ~13 ~0 ~0 ~13 diamond_pressure_plate keep
-fill ~4 ~ ~13 ~4 ~0 ~13 diamond_pressure_plate keep
-fill ~8 ~ ~13 ~8 ~0 ~13 diamond_pressure_plate keep
-fill ~20 ~ ~13 ~20 ~0 ~13 diamond_pressure_plate keep
-fill ~24 ~ ~13 ~24 ~0 ~13 diamond_pressure_plate keep
-fill ~28 ~ ~13 ~28 ~0 ~13 diamond_pressure_plate keep
-fill ~36 ~ ~13 ~36 ~0 ~13 diamond_pressure_plate keep
-fill ~40 ~ ~13 ~40 ~0 ~13 diamond_pressure_plate keep
-fill ~0 ~ ~14 ~0 ~0 ~14 diamond_pressure_plate keep
-fill ~4 ~ ~14 ~4 ~0 ~14 diamond_pressure_plate keep
-fill ~8 ~ ~14 ~8 ~0 ~14 diamond_pressure_plate keep
-fill ~20 ~ ~14 ~20 ~0 ~14 diamond_pressure_plate keep
-fill ~24 ~ ~14 ~24 ~0 ~14 diamond_pressure_plate keep
-fill ~28 ~ ~14 ~28 ~0 ~14 diamond_pressure_plate keep
-fill ~36 ~ ~14 ~36 ~0 ~14 diamond_pressure_plate keep
-fill ~40 ~ ~14 ~40 ~0 ~14 diamond_pressure_plate keep
-fill ~0 ~ ~15 ~0 ~0 ~15 diamond_pressure_plate keep
-fill ~4 ~ ~15 ~4 ~0 ~15 diamond_pressure_plate keep
-fill ~8 ~ ~15 ~8 ~0 ~15 diamond_pressure_plate keep
-fill ~20 ~ ~15 ~20 ~0 ~15 diamond_pressure_plate keep
-fill ~24 ~ ~15 ~24 ~0 ~15 diamond_pressure_plate keep
-fill ~28 ~ ~15 ~28 ~0 ~15 diamond_pressure_plate keep
-fill ~36 ~ ~15 ~36 ~0 ~15 diamond_pressure_plate keep
-fill ~40 ~ ~15 ~40 ~0 ~15 diamond_pressure_plate keep
-fill ~0 ~ ~16 ~0 ~0 ~16 diamond_pressure_plate keep
-fill ~4 ~ ~16 ~4 ~0 ~16 diamond_pressure_plate keep
-fill ~8 ~ ~16 ~8 ~0 ~16 diamond_pressure_plate keep
-fill ~12 ~ ~16 ~12 ~0 ~16 diamond_pressure_plate keep
-fill ~16 ~ ~16 ~16 ~0 ~16 diamond_pressure_plate keep
-fill ~20 ~ ~16 ~20 ~0 ~16 diamond_pressure_plate keep
-fill ~21 ~ ~16 ~21 ~0 ~16 diamond_pressure_plate keep
-fill ~22 ~ ~16 ~22 ~0 ~16 diamond_pressure_plate keep
-fill ~23 ~ ~16 ~23 ~0 ~16 diamond_pressure_plate keep
-fill ~24 ~ ~16 ~24 ~0 ~16 diamond_pressure_plate keep
-fill ~28 ~ ~16 ~28 ~0 ~16 diamond_pressure_plate keep
-fill ~29 ~ ~16 ~29 ~0 ~16 diamond_pressure_plate keep
-fill ~30 ~ ~16 ~30 ~0 ~16 diamond_pressure_plate keep
-fill ~31 ~ ~16 ~31 ~0 ~16 diamond_pressure_plate keep
-fill ~32 ~ ~16 ~32 ~0 ~16 diamond_pressure_plate keep
-fill ~36 ~ ~16 ~36 ~0 ~16 diamond_pressure_plate keep
-fill ~40 ~ ~16 ~40 ~0 ~16 diamond_pressure_plate keep
-fill ~0 ~ ~17 ~0 ~0 ~17 diamond_pressure_plate keep
-fill ~8 ~ ~17 ~8 ~0 ~17 diamond_pressure_plate keep
-fill ~12 ~ ~17 ~12 ~0 ~17 diamond_pressure_plate keep
-fill ~16 ~ ~17 ~16 ~0 ~17 diamond_pressure_plate keep
-fill ~32 ~ ~17 ~32 ~0 ~17 diamond_pressure_plate keep
-fill ~40 ~ ~17 ~40 ~0 ~17 diamond_pressure_plate keep
-fill ~0 ~ ~18 ~0 ~0 ~18 diamond_pressure_plate keep
-fill ~8 ~ ~18 ~8 ~0 ~18 diamond_pressure_plate keep
-fill ~12 ~ ~18 ~12 ~0 ~18 diamond_pressure_plate keep
-fill ~16 ~ ~18 ~16 ~0 ~18 diamond_pressure_plate keep
-fill ~32 ~ ~18 ~32 ~0 ~18 diamond_pressure_plate keep
-fill ~40 ~ ~18 ~40 ~0 ~18 diamond_pressure_plate keep
-fill ~0 ~ ~19 ~0 ~0 ~19 diamond_pressure_plate keep
-fill ~8 ~ ~19 ~8 ~0 ~19 diamond_pressure_plate keep
-fill ~12 ~ ~19 ~12 ~0 ~19 diamond_pressure_plate keep
-fill ~16 ~ ~19 ~16 ~0 ~19 diamond_pressure_plate keep
-fill ~32 ~ ~19 ~32 ~0 ~19 diamond_pressure_plate keep
-fill ~40 ~ ~19 ~40 ~0 ~19 diamond_pressure_plate keep
-fill ~0 ~ ~20 ~0 ~0 ~20 diamond_pressure_plate keep
-fill ~1 ~ ~20 ~1 ~0 ~20 diamond_pressure_plate keep
-fill ~2 ~ ~20 ~2 ~0 ~20 diamond_pressure_plate keep
-fill ~3 ~ ~20 ~3 ~0 ~20 diamond_pressure_plate keep
-fill ~4 ~ ~20 ~4 ~0 ~20 diamond_pressure_plate keep
-fill ~8 ~ ~20 ~8 ~0 ~20 diamond_pressure_plate keep
-fill ~9 ~ ~20 ~9 ~0 ~20 diamond_pressure_plate keep
-fill ~10 ~ ~20 ~10 ~0 ~20 diamond_pressure_plate keep
-fill ~11 ~ ~20 ~11 ~0 ~20 diamond_pressure_plate keep
-fill ~12 ~ ~20 ~12 ~0 ~20 diamond_pressure_plate keep
-fill ~16 ~ ~20 ~16 ~0 ~20 diamond_pressure_plate keep
-fill ~17 ~ ~20 ~17 ~0 ~20 diamond_pressure_plate keep
-fill ~18 ~ ~20 ~18 ~0 ~20 diamond_pressure_plate keep
-fill ~19 ~ ~20 ~19 ~0 ~20 diamond_pressure_plate keep
-fill ~20 ~ ~20 ~20 ~0 ~20 diamond_pressure_plate keep
-fill ~24 ~ ~20 ~24 ~0 ~20 diamond_pressure_plate keep
-fill ~25 ~ ~20 ~25 ~0 ~20 diamond_pressure_plate keep
-fill ~26 ~ ~20 ~26 ~0 ~20 diamond_pressure_plate keep
-fill ~27 ~ ~20 ~27 ~0 ~20 diamond_pressure_plate keep
-fill ~28 ~ ~20 ~28 ~0 ~20 diamond_pressure_plate keep
-fill ~29 ~ ~20 ~29 ~0 ~20 diamond_pressure_plate keep
-fill ~30 ~ ~20 ~30 ~0 ~20 diamond_pressure_plate keep
-fill ~31 ~ ~20 ~31 ~0 ~20 diamond_pressure_plate keep
-fill ~32 ~ ~20 ~32 ~0 ~20 diamond_pressure_plate keep
-fill ~33 ~ ~20 ~33 ~0 ~20 diamond_pressure_plate keep
-fill ~34 ~ ~20 ~34 ~0 ~20 diamond_pressure_plate keep
-fill ~35 ~ ~20 ~35 ~0 ~20 diamond_pressure_plate keep
-fill ~36 ~ ~20 ~36 ~0 ~20 diamond_pressure_plate keep
-fill ~40 ~ ~20 ~40 ~0 ~20 diamond_pressure_plate keep
-fill ~0 ~ ~21 ~0 ~0 ~21 diamond_pressure_plate keep
-fill ~4 ~ ~21 ~4 ~0 ~21 diamond_pressure_plate keep
-fill ~8 ~ ~21 ~8 ~0 ~21 diamond_pressure_plate keep
-fill ~20 ~ ~21 ~20 ~0 ~21 diamond_pressure_plate keep
-fill ~28 ~ ~21 ~28 ~0 ~21 diamond_pressure_plate keep
-fill ~36 ~ ~21 ~36 ~0 ~21 diamond_pressure_plate keep
-fill ~40 ~ ~21 ~40 ~0 ~21 diamond_pressure_plate keep
-fill ~0 ~ ~22 ~0 ~0 ~22 diamond_pressure_plate keep
-fill ~4 ~ ~22 ~4 ~0 ~22 diamond_pressure_plate keep
-fill ~8 ~ ~22 ~8 ~0 ~22 diamond_pressure_plate keep
-fill ~20 ~ ~22 ~20 ~0 ~22 diamond_pressure_plate keep
-fill ~28 ~ ~22 ~28 ~0 ~22 diamond_pressure_plate keep
-fill ~36 ~ ~22 ~36 ~0 ~22 diamond_pressure_plate keep
-fill ~40 ~ ~22 ~40 ~0 ~22 diamond_pressure_plate keep
-fill ~0 ~ ~23 ~0 ~0 ~23 diamond_pressure_plate keep
-fill ~4 ~ ~23 ~4 ~0 ~23 diamond_pressure_plate keep
-fill ~8 ~ ~23 ~8 ~0 ~23 diamond_pressure_plate keep
-fill ~20 ~ ~23 ~20 ~0 ~23 diamond_pressure_plate keep
-fill ~28 ~ ~23 ~28 ~0 ~23 diamond_pressure_plate keep
-fill ~36 ~ ~23 ~36 ~0 ~23 diamond_pressure_plate keep
-fill ~40 ~ ~23 ~40 ~0 ~23 diamond_pressure_plate keep
-fill ~0 ~ ~24 ~0 ~0 ~24 diamond_pressure_plate keep
-fill ~4 ~ ~24 ~4 ~0 ~24 diamond_pressure_plate keep
-fill ~8 ~ ~24 ~8 ~0 ~24 diamond_pressure_plate keep
-fill ~9 ~ ~24 ~9 ~0 ~24 diamond_pressure_plate keep
-fill ~10 ~ ~24 ~10 ~0 ~24 diamond_pressure_plate keep
-fill ~11 ~ ~24 ~11 ~0 ~24 diamond_pressure_plate keep
-fill ~12 ~ ~24 ~12 ~0 ~24 diamond_pressure_plate keep
-fill ~13 ~ ~24 ~13 ~0 ~24 diamond_pressure_plate keep
-fill ~14 ~ ~24 ~14 ~0 ~24 diamond_pressure_plate keep
-fill ~15 ~ ~24 ~15 ~0 ~24 diamond_pressure_plate keep
-fill ~16 ~ ~24 ~16 ~0 ~24 diamond_pressure_plate keep
-fill ~20 ~ ~24 ~20 ~0 ~24 diamond_pressure_plate keep
-fill ~24 ~ ~24 ~24 ~0 ~24 diamond_pressure_plate keep
-fill ~28 ~ ~24 ~28 ~0 ~24 diamond_pressure_plate keep
-fill ~32 ~ ~24 ~32 ~0 ~24 diamond_pressure_plate keep
-fill ~36 ~ ~24 ~36 ~0 ~24 diamond_pressure_plate keep
-fill ~40 ~ ~24 ~40 ~0 ~24 diamond_pressure_plate keep
-fill ~0 ~ ~25 ~0 ~0 ~25 diamond_pressure_plate keep
-fill ~4 ~ ~25 ~4 ~0 ~25 diamond_pressure_plate keep
-fill ~8 ~ ~25 ~8 ~0 ~25 diamond_pressure_plate keep
-fill ~12 ~ ~25 ~12 ~0 ~25 diamond_pressure_plate keep
-fill ~16 ~ ~25 ~16 ~0 ~25 diamond_pressure_plate keep
-fill ~20 ~ ~25 ~20 ~0 ~25 diamond_pressure_plate keep
-fill ~24 ~ ~25 ~24 ~0 ~25 diamond_pressure_plate keep
-fill ~28 ~ ~25 ~28 ~0 ~25 diamond_pressure_plate keep
-fill ~32 ~ ~25 ~32 ~0 ~25 diamond_pressure_plate keep
-fill ~36 ~ ~25 ~36 ~0 ~25 diamond_pressure_plate keep
-fill ~40 ~ ~25 ~40 ~0 ~25 diamond_pressure_plate keep
-fill ~0 ~ ~26 ~0 ~0 ~26 diamond_pressure_plate keep
-fill ~4 ~ ~26 ~4 ~0 ~26 diamond_pressure_plate keep
-fill ~8 ~ ~26 ~8 ~0 ~26 diamond_pressure_plate keep
-fill ~12 ~ ~26 ~12 ~0 ~26 diamond_pressure_plate keep
-fill ~16 ~ ~26 ~16 ~0 ~26 diamond_pressure_plate keep
-fill ~20 ~ ~26 ~20 ~0 ~26 diamond_pressure_plate keep
-fill ~24 ~ ~26 ~24 ~0 ~26 diamond_pressure_plate keep
-fill ~28 ~ ~26 ~28 ~0 ~26 diamond_pressure_plate keep
-fill ~32 ~ ~26 ~32 ~0 ~26 diamond_pressure_plate keep
-fill ~36 ~ ~26 ~36 ~0 ~26 diamond_pressure_plate keep
-fill ~40 ~ ~26 ~40 ~0 ~26 diamond_pressure_plate keep
-fill ~0 ~ ~27 ~0 ~0 ~27 diamond_pressure_plate keep
-fill ~4 ~ ~27 ~4 ~0 ~27 diamond_pressure_plate keep
-fill ~8 ~ ~27 ~8 ~0 ~27 diamond_pressure_plate keep
-fill ~12 ~ ~27 ~12 ~0 ~27 diamond_pressure_plate keep
-fill ~16 ~ ~27 ~16 ~0 ~27 diamond_pressure_plate keep
-fill ~20 ~ ~27 ~20 ~0 ~27 diamond_pressure_plate keep
-fill ~24 ~ ~27 ~24 ~0 ~27 diamond_pressure_plate keep
-fill ~28 ~ ~27 ~28 ~0 ~27 diamond_pressure_plate keep
-fill ~32 ~ ~27 ~32 ~0 ~27 diamond_pressure_plate keep
-fill ~36 ~ ~27 ~36 ~0 ~27 diamond_pressure_plate keep
-fill ~40 ~ ~27 ~40 ~0 ~27 diamond_pressure_plate keep
-fill ~0 ~ ~28 ~0 ~0 ~28 diamond_pressure_plate keep
-fill ~4 ~ ~28 ~4 ~0 ~28 diamond_pressure_plate keep
-fill ~8 ~ ~28 ~8 ~0 ~28 diamond_pressure_plate keep
-fill ~12 ~ ~28 ~12 ~0 ~28 diamond_pressure_plate keep
-fill ~16 ~ ~28 ~16 ~0 ~28 diamond_pressure_plate keep
-fill ~20 ~ ~28 ~20 ~0 ~28 diamond_pressure_plate keep
-fill ~24 ~ ~28 ~24 ~0 ~28 diamond_pressure_plate keep
-fill ~28 ~ ~28 ~28 ~0 ~28 diamond_pressure_plate keep
-fill ~32 ~ ~28 ~32 ~0 ~28 diamond_pressure_plate keep
-fill ~36 ~ ~28 ~36 ~0 ~28 diamond_pressure_plate keep
-fill ~40 ~ ~28 ~40 ~0 ~28 diamond_pressure_plate keep
-fill ~0 ~ ~29 ~0 ~0 ~29 diamond_pressure_plate keep
-fill ~4 ~ ~29 ~4 ~0 ~29 diamond_pressure_plate keep
-fill ~16 ~ ~29 ~16 ~0 ~29 diamond_pressure_plate keep
-fill ~20 ~ ~29 ~20 ~0 ~29 diamond_pressure_plate keep
-fill ~24 ~ ~29 ~24 ~0 ~29 diamond_pressure_plate keep
-fill ~32 ~ ~29 ~32 ~0 ~29 diamond_pressure_plate keep
-fill ~36 ~ ~29 ~36 ~0 ~29 diamond_pressure_plate keep
-fill ~40 ~ ~29 ~40 ~0 ~29 diamond_pressure_plate keep
-fill ~0 ~ ~30 ~0 ~0 ~30 diamond_pressure_plate keep
-fill ~4 ~ ~30 ~4 ~0 ~30 diamond_pressure_plate keep
-fill ~16 ~ ~30 ~16 ~0 ~30 diamond_pressure_plate keep
-fill ~20 ~ ~30 ~20 ~0 ~30 diamond_pressure_plate keep
-fill ~24 ~ ~30 ~24 ~0 ~30 diamond_pressure_plate keep
-fill ~32 ~ ~30 ~32 ~0 ~30 diamond_pressure_plate keep
-fill ~36 ~ ~30 ~36 ~0 ~30 diamond_pressure_plate keep
-fill ~40 ~ ~30 ~40 ~0 ~30 diamond_pressure_plate keep
-fill ~0 ~ ~31 ~0 ~0 ~31 diamond_pressure_plate keep
-fill ~4 ~ ~31 ~4 ~0 ~31 diamond_pressure_plate keep
-fill ~16 ~ ~31 ~16 ~0 ~31 diamond_pressure_plate keep
-fill ~20 ~ ~31 ~20 ~0 ~31 diamond_pressure_plate keep
-fill ~24 ~ ~31 ~24 ~0 ~31 diamond_pressure_plate keep
-fill ~32 ~ ~31 ~32 ~0 ~31 diamond_pressure_plate keep
-fill ~36 ~ ~31 ~36 ~0 ~31 diamond_pressure_plate keep
-fill ~40 ~ ~31 ~40 ~0 ~31 diamond_pressure_plate keep
-fill ~0 ~ ~32 ~0 ~0 ~32 diamond_pressure_plate keep
-fill ~4 ~ ~32 ~4 ~0 ~32 diamond_pressure_plate keep
-fill ~5 ~ ~32 ~5 ~0 ~32 diamond_pressure_plate keep
-fill ~6 ~ ~32 ~6 ~0 ~32 diamond_pressure_plate keep
-fill ~7 ~ ~32 ~7 ~0 ~32 diamond_pressure_plate keep
-fill ~8 ~ ~32 ~8 ~0 ~32 diamond_pressure_plate keep
-fill ~12 ~ ~32 ~12 ~0 ~32 diamond_pressure_plate keep
-fill ~16 ~ ~32 ~16 ~0 ~32 diamond_pressure_plate keep
-fill ~17 ~ ~32 ~17 ~0 ~32 diamond_pressure_plate keep
-fill ~18 ~ ~32 ~18 ~0 ~32 diamond_pressure_plate keep
-fill ~19 ~ ~32 ~19 ~0 ~32 diamond_pressure_plate keep
-fill ~20 ~ ~32 ~20 ~0 ~32 diamond_pressure_plate keep
-fill ~21 ~ ~32 ~21 ~0 ~32 diamond_pressure_plate keep
-fill ~22 ~ ~32 ~22 ~0 ~32 diamond_pressure_plate keep
-fill ~23 ~ ~32 ~23 ~0 ~32 diamond_pressure_plate keep
-fill ~24 ~ ~32 ~24 ~0 ~32 diamond_pressure_plate keep
-fill ~28 ~ ~32 ~28 ~0 ~32 diamond_pressure_plate keep
-fill ~29 ~ ~32 ~29 ~0 ~32 diamond_pressure_plate keep
-fill ~30 ~ ~32 ~30 ~0 ~32 diamond_pressure_plate keep
-fill ~31 ~ ~32 ~31 ~0 ~32 diamond_pressure_plate keep
-fill ~32 ~ ~32 ~32 ~0 ~32 diamond_pressure_plate keep
-fill ~36 ~ ~32 ~36 ~0 ~32 diamond_pressure_plate keep
-fill ~40 ~ ~32 ~40 ~0 ~32 diamond_pressure_plate keep
-fill ~0 ~ ~33 ~0 ~0 ~33 diamond_pressure_plate keep
-fill ~4 ~ ~33 ~4 ~0 ~33 diamond_pressure_plate keep
-fill ~12 ~ ~33 ~12 ~0 ~33 diamond_pressure_plate keep
-fill ~16 ~ ~33 ~16 ~0 ~33 diamond_pressure_plate keep
-fill ~24 ~ ~33 ~24 ~0 ~33 diamond_pressure_plate keep
-fill ~32 ~ ~33 ~32 ~0 ~33 diamond_pressure_plate keep
-fill ~40 ~ ~33 ~40 ~0 ~33 diamond_pressure_plate keep
-fill ~0 ~ ~34 ~0 ~0 ~34 diamond_pressure_plate keep
-fill ~4 ~ ~34 ~4 ~0 ~34 diamond_pressure_plate keep
-fill ~12 ~ ~34 ~12 ~0 ~34 diamond_pressure_plate keep
-fill ~16 ~ ~34 ~16 ~0 ~34 diamond_pressure_plate keep
-fill ~24 ~ ~34 ~24 ~0 ~34 diamond_pressure_plate keep
-fill ~32 ~ ~34 ~32 ~0 ~34 diamond_pressure_plate keep
-fill ~40 ~ ~34 ~40 ~0 ~34 diamond_pressure_plate keep
-fill ~0 ~ ~35 ~0 ~0 ~35 diamond_pressure_plate keep
-fill ~4 ~ ~35 ~4 ~0 ~35 diamond_pressure_plate keep
-fill ~12 ~ ~35 ~12 ~0 ~35 diamond_pressure_plate keep
-fill ~16 ~ ~35 ~16 ~0 ~35 diamond_pressure_plate keep
-fill ~24 ~ ~35 ~24 ~0 ~35 diamond_pressure_plate keep
-fill ~32 ~ ~35 ~32 ~0 ~35 diamond_pressure_plate keep
-fill ~40 ~ ~35 ~40 ~0 ~35 diamond_pressure_plate keep
-fill ~0 ~ ~36 ~0 ~0 ~36 diamond_pressure_plate keep
-fill ~4 ~ ~36 ~4 ~0 ~36 diamond_pressure_plate keep
-fill ~8 ~ ~36 ~8 ~0 ~36 diamond_pressure_plate keep
-fill ~9 ~ ~36 ~9 ~0 ~36 diamond_pressure_plate keep
-fill ~10 ~ ~36 ~10 ~0 ~36 diamond_pressure_plate keep
-fill ~11 ~ ~36 ~11 ~0 ~36 diamond_pressure_plate keep
-fill ~12 ~ ~36 ~12 ~0 ~36 diamond_pressure_plate keep
-fill ~16 ~ ~36 ~16 ~0 ~36 diamond_pressure_plate keep
-fill ~17 ~ ~36 ~17 ~0 ~36 diamond_pressure_plate keep
-fill ~18 ~ ~36 ~18 ~0 ~36 diamond_pressure_plate keep
-fill ~19 ~ ~36 ~19 ~0 ~36 diamond_pressure_plate keep
-fill ~20 ~ ~36 ~20 ~0 ~36 diamond_pressure_plate keep
-fill ~24 ~ ~36 ~24 ~0 ~36 diamond_pressure_plate keep
-fill ~25 ~ ~36 ~25 ~0 ~36 diamond_pressure_plate keep
-fill ~26 ~ ~36 ~26 ~0 ~36 diamond_pressure_plate keep
-fill ~27 ~ ~36 ~27 ~0 ~36 diamond_pressure_plate keep
-fill ~28 ~ ~36 ~28 ~0 ~36 diamond_pressure_plate keep
-fill ~32 ~ ~36 ~32 ~0 ~36 diamond_pressure_plate keep
-fill ~36 ~ ~36 ~36 ~0 ~36 diamond_pressure_plate keep
-fill ~40 ~ ~36 ~40 ~0 ~36 diamond_pressure_plate keep
-fill ~0 ~ ~37 ~0 ~0 ~37 diamond_pressure_plate keep
-fill ~12 ~ ~37 ~12 ~0 ~37 diamond_pressure_plate keep
-fill ~32 ~ ~37 ~32 ~0 ~37 diamond_pressure_plate keep
-fill ~36 ~ ~37 ~36 ~0 ~37 diamond_pressure_plate keep
-fill ~40 ~ ~37 ~40 ~0 ~37 diamond_pressure_plate keep
-fill ~0 ~ ~38 ~0 ~0 ~38 diamond_pressure_plate keep
-fill ~12 ~ ~38 ~12 ~0 ~38 diamond_pressure_plate keep
-fill ~32 ~ ~38 ~32 ~0 ~38 diamond_pressure_plate keep
-fill ~36 ~ ~38 ~36 ~0 ~38 diamond_pressure_plate keep
-fill ~40 ~ ~38 ~40 ~0 ~38 diamond_pressure_plate keep
-fill ~0 ~ ~39 ~0 ~0 ~39 diamond_pressure_plate keep
-fill ~12 ~ ~39 ~12 ~0 ~39 diamond_pressure_plate keep
-fill ~32 ~ ~39 ~32 ~0 ~39 diamond_pressure_plate keep
-fill ~36 ~ ~39 ~36 ~0 ~39 diamond_pressure_plate keep
-fill ~40 ~ ~39 ~40 ~0 ~39 diamond_pressure_plate keep
-fill ~0 ~ ~40 ~0 ~0 ~40 diamond_pressure_plate keep
-fill ~1 ~ ~40 ~1 ~0 ~40 diamond_pressure_plate keep
-fill ~2 ~ ~40 ~2 ~0 ~40 diamond_pressure_plate keep
-fill ~3 ~ ~40 ~3 ~0 ~40 diamond_pressure_plate keep
-fill ~4 ~ ~40 ~4 ~0 ~40 diamond_pressure_plate keep
-fill ~5 ~ ~40 ~5 ~0 ~40 diamond_pressure_plate keep
-fill ~6 ~ ~40 ~6 ~0 ~40 diamond_pressure_plate keep
-fill ~7 ~ ~40 ~7 ~0 ~40 diamond_pressure_plate keep
-fill ~8 ~ ~40 ~8 ~0 ~40 diamond_pressure_plate keep
-fill ~9 ~ ~40 ~9 ~0 ~40 diamond_pressure_plate keep
-fill ~10 ~ ~40 ~10 ~0 ~40 diamond_pressure_plate keep
-fill ~11 ~ ~40 ~11 ~0 ~40 diamond_pressure_plate keep
-fill ~12 ~ ~40 ~12 ~0 ~40 diamond_pressure_plate keep
-fill ~13 ~ ~40 ~13 ~0 ~40 diamond_pressure_plate keep
-fill ~14 ~ ~40 ~14 ~0 ~40 diamond_pressure_plate keep
-fill ~15 ~ ~40 ~15 ~0 ~40 diamond_pressure_plate keep
-fill ~16 ~ ~40 ~16 ~0 ~40 diamond_pressure_plate keep
-fill ~17 ~ ~40 ~17 ~0 ~40 diamond_pressure_plate keep
-fill ~18 ~ ~40 ~18 ~0 ~40 diamond_pressure_plate keep
-fill ~19 ~ ~40 ~19 ~0 ~40 diamond_pressure_plate keep
-fill ~20 ~ ~40 ~20 ~0 ~40 diamond_pressure_plate keep
-fill ~21 ~ ~40 ~21 ~0 ~40 diamond_pressure_plate keep
-fill ~22 ~ ~40 ~22 ~0 ~40 diamond_pressure_plate keep
-fill ~23 ~ ~40 ~23 ~0 ~40 diamond_pressure_plate keep
-fill ~24 ~ ~40 ~24 ~0 ~40 diamond_pressure_plate keep
-fill ~25 ~ ~40 ~25 ~0 ~40 diamond_pressure_plate keep
-fill ~26 ~ ~40 ~26 ~0 ~40 diamond_pressure_plate keep
-fill ~27 ~ ~40 ~27 ~0 ~40 diamond_pressure_plate keep
-fill ~28 ~ ~40 ~28 ~0 ~40 diamond_pressure_plate keep
-fill ~29 ~ ~40 ~29 ~0 ~40 diamond_pressure_plate keep
-fill ~30 ~ ~40 ~30 ~0 ~40 diamond_pressure_plate keep
-fill ~31 ~ ~40 ~31 ~0 ~40 diamond_pressure_plate keep
-fill ~32 ~ ~40 ~32 ~0 ~40 diamond_pressure_plate keep
-fill ~33 ~ ~40 ~33 ~0 ~40 diamond_pressure_plate keep
-fill ~34 ~ ~40 ~34 ~0 ~40 diamond_pressure_plate keep
-fill ~35 ~ ~40 ~35 ~0 ~40 diamond_pressure_plate keep
-fill ~36 ~ ~40 ~36 ~0 ~40 diamond_pressure_plate keep
-fill ~37 ~ ~40 ~37 ~0 ~40 diamond_pressure_plate keep
-fill ~38 ~ ~40 ~38 ~0 ~40 diamond_pressure_plate keep
-fill ~39 ~ ~40 ~39 ~0 ~40 diamond_pressure_plate keep
-fill ~40 ~ ~40 ~40 ~0 ~40 diamond_pressure_plate keep
+fill ~20 ~-1 ~0 ~0 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~1 ~-1 ~0 ~1 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~2 ~-1 ~0 ~2 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~3 ~-1 ~0 ~3 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~4 ~-1 ~0 ~4 ~-1 ~0 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~5 ~-1 ~0 ~5 ~-1 ~0 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~6 ~-1 ~0 ~6 ~-1 ~0 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~7 ~-1 ~0 ~7 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~0 ~8 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~9 ~-1 ~0 ~9 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~10 ~-1 ~0 ~10 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~11 ~-1 ~0 ~11 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~0 ~12 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~13 ~-1 ~0 ~13 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~14 ~-1 ~0 ~14 ~-1 ~0 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~15 ~-1 ~0 ~15 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~16 ~-1 ~0 ~16 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~17 ~-1 ~0 ~17 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~18 ~-1 ~0 ~18 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~19 ~-1 ~0 ~19 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~0 ~20 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~21 ~-1 ~0 ~21 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~22 ~-1 ~0 ~22 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~23 ~-1 ~0 ~23 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~0 ~24 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~25 ~-1 ~0 ~25 ~-1 ~0 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~26 ~-1 ~0 ~26 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~27 ~-1 ~0 ~27 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~0 ~28 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~29 ~-1 ~0 ~29 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~30 ~-1 ~0 ~30 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~31 ~-1 ~0 ~31 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~0 ~32 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~33 ~-1 ~0 ~33 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~34 ~-1 ~0 ~34 ~-1 ~0 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~35 ~-1 ~0 ~35 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~0 ~36 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~37 ~-1 ~0 ~37 ~-1 ~0 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~38 ~-1 ~0 ~38 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~39 ~-1 ~0 ~39 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~0 ~40 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~1 ~0 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~1 ~4 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~1 ~8 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~1 ~12 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~1 ~16 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~1 ~20 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~1 ~28 ~-1 ~1 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~1 ~32 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~1 ~36 ~-1 ~1 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~40 ~-1 ~1 ~40 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~2 ~0 ~-1 ~2 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~4 ~-1 ~2 ~4 ~-1 ~2 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~8 ~-1 ~2 ~8 ~-1 ~2 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~2 ~12 ~-1 ~2 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~2 ~16 ~-1 ~2 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~2 ~20 ~-1 ~2 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~2 ~28 ~-1 ~2 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~32 ~-1 ~2 ~32 ~-1 ~2 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~36 ~-1 ~2 ~36 ~-1 ~2 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~2 ~40 ~-1 ~2 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~3 ~0 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~3 ~4 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~3 ~8 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~3 ~12 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~3 ~16 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~3 ~20 ~-1 ~3 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~3 ~28 ~-1 ~3 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~3 ~32 ~-1 ~3 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~36 ~-1 ~3 ~36 ~-1 ~3 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~3 ~40 ~-1 ~3 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~4 ~0 ~-1 ~4 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~4 ~4 ~-1 ~4 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~8 ~-1 ~4 ~8 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~4 ~12 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~4 ~16 ~-1 ~4 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~20 ~-1 ~4 ~20 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~4 ~24 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~25 ~-1 ~4 ~25 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~26 ~-1 ~4 ~26 ~-1 ~4 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~27 ~-1 ~4 ~27 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~4 ~28 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~4 ~32 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~4 ~36 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~4 ~40 ~-1 ~4 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~0 ~-1 ~5 ~0 ~-1 ~5 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~8 ~-1 ~5 ~8 ~-1 ~5 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~5 ~20 ~-1 ~5 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~5 ~28 ~-1 ~5 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~5 ~32 ~-1 ~5 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~40 ~-1 ~5 ~40 ~-1 ~5 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~6 ~0 ~-1 ~6 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~6 ~8 ~-1 ~6 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~6 ~20 ~-1 ~6 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~28 ~-1 ~6 ~28 ~-1 ~6 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~6 ~32 ~-1 ~6 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~6 ~40 ~-1 ~6 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~7 ~0 ~-1 ~7 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~8 ~-1 ~7 ~8 ~-1 ~7 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~20 ~-1 ~7 ~20 ~-1 ~7 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~7 ~28 ~-1 ~7 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~7 ~32 ~-1 ~7 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~7 ~40 ~-1 ~7 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~8 ~0 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~8 ~4 ~-1 ~8 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~8 ~-1 ~8 ~8 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~8 ~12 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~8 ~16 ~-1 ~8 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~17 ~-1 ~8 ~17 ~-1 ~8 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~18 ~-1 ~8 ~18 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~19 ~-1 ~8 ~19 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~8 ~20 ~-1 ~8 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~21 ~-1 ~8 ~21 ~-1 ~8 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~22 ~-1 ~8 ~22 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~23 ~-1 ~8 ~23 ~-1 ~8 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~8 ~24 ~-1 ~8 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~28 ~-1 ~8 ~28 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~8 ~32 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~33 ~-1 ~8 ~33 ~-1 ~8 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~34 ~-1 ~8 ~34 ~-1 ~8 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~35 ~-1 ~8 ~35 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~8 ~36 ~-1 ~8 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~8 ~40 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~9 ~0 ~-1 ~9 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~9 ~4 ~-1 ~9 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~8 ~-1 ~9 ~8 ~-1 ~9 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~12 ~-1 ~9 ~12 ~-1 ~9 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~16 ~-1 ~9 ~16 ~-1 ~9 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~9 ~20 ~-1 ~9 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~9 ~32 ~-1 ~9 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~9 ~40 ~-1 ~9 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~10 ~0 ~-1 ~10 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~4 ~-1 ~10 ~4 ~-1 ~10 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~10 ~8 ~-1 ~10 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~10 ~12 ~-1 ~10 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~16 ~-1 ~10 ~16 ~-1 ~10 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~10 ~20 ~-1 ~10 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~10 ~32 ~-1 ~10 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~10 ~40 ~-1 ~10 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~0 ~-1 ~11 ~0 ~-1 ~11 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~11 ~4 ~-1 ~11 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~8 ~-1 ~11 ~8 ~-1 ~11 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~12 ~-1 ~11 ~12 ~-1 ~11 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~11 ~16 ~-1 ~11 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~11 ~20 ~-1 ~11 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~11 ~32 ~-1 ~11 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~11 ~40 ~-1 ~11 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~12 ~0 ~-1 ~12 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~12 ~4 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~5 ~-1 ~12 ~5 ~-1 ~12 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~6 ~-1 ~12 ~6 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~7 ~-1 ~12 ~7 ~-1 ~12 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~8 ~-1 ~12 ~8 ~-1 ~12 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~9 ~-1 ~12 ~9 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~10 ~-1 ~12 ~10 ~-1 ~12 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~11 ~-1 ~12 ~11 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~12 ~12 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~12 ~16 ~-1 ~12 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~12 ~20 ~-1 ~12 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~12 ~24 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~12 ~28 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~29 ~-1 ~12 ~29 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~30 ~-1 ~12 ~30 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~31 ~-1 ~12 ~31 ~-1 ~12 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~12 ~32 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~12 ~36 ~-1 ~12 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~37 ~-1 ~12 ~37 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~38 ~-1 ~12 ~38 ~-1 ~12 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~39 ~-1 ~12 ~39 ~-1 ~12 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~12 ~40 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~13 ~0 ~-1 ~13 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~13 ~4 ~-1 ~13 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~13 ~8 ~-1 ~13 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~13 ~20 ~-1 ~13 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~13 ~24 ~-1 ~13 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~13 ~28 ~-1 ~13 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~36 ~-1 ~13 ~36 ~-1 ~13 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~13 ~40 ~-1 ~13 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~14 ~0 ~-1 ~14 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~4 ~-1 ~14 ~4 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~14 ~8 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~14 ~20 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~14 ~24 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~14 ~28 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~14 ~36 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~14 ~40 ~-1 ~14 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~0 ~-1 ~15 ~0 ~-1 ~15 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~15 ~4 ~-1 ~15 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~15 ~8 ~-1 ~15 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~20 ~-1 ~15 ~20 ~-1 ~15 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~15 ~24 ~-1 ~15 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~15 ~28 ~-1 ~15 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~15 ~36 ~-1 ~15 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~15 ~40 ~-1 ~15 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~16 ~0 ~-1 ~16 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~4 ~-1 ~16 ~4 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~16 ~8 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~16 ~12 ~-1 ~16 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~16 ~-1 ~16 ~16 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~16 ~20 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~21 ~-1 ~16 ~21 ~-1 ~16 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~22 ~-1 ~16 ~22 ~-1 ~16 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~23 ~-1 ~16 ~23 ~-1 ~16 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~24 ~-1 ~16 ~24 ~-1 ~16 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~28 ~-1 ~16 ~28 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~29 ~-1 ~16 ~29 ~-1 ~16 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~30 ~-1 ~16 ~30 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~31 ~-1 ~16 ~31 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~16 ~32 ~-1 ~16 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~36 ~-1 ~16 ~36 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~16 ~40 ~-1 ~16 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~0 ~-1 ~17 ~0 ~-1 ~17 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~17 ~8 ~-1 ~17 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~12 ~-1 ~17 ~12 ~-1 ~17 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~17 ~16 ~-1 ~17 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~32 ~-1 ~17 ~32 ~-1 ~17 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~17 ~40 ~-1 ~17 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~0 ~-1 ~18 ~0 ~-1 ~18 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~18 ~8 ~-1 ~18 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~18 ~12 ~-1 ~18 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~18 ~16 ~-1 ~18 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~18 ~32 ~-1 ~18 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~18 ~40 ~-1 ~18 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~0 ~-1 ~19 ~0 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~19 ~8 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~19 ~12 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~19 ~16 ~-1 ~19 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~32 ~-1 ~19 ~32 ~-1 ~19 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~19 ~40 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~20 ~0 ~-1 ~20 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~1 ~-1 ~20 ~1 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~2 ~-1 ~20 ~2 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~3 ~-1 ~20 ~3 ~-1 ~20 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~4 ~-1 ~20 ~4 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~20 ~8 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~9 ~-1 ~20 ~9 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~10 ~-1 ~20 ~10 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~11 ~-1 ~20 ~11 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~20 ~12 ~-1 ~20 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~16 ~-1 ~20 ~16 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~17 ~-1 ~20 ~17 ~-1 ~20 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~18 ~-1 ~20 ~18 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~19 ~-1 ~20 ~19 ~-1 ~20 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~20 ~20 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~20 ~24 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~25 ~-1 ~20 ~25 ~-1 ~20 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~26 ~-1 ~20 ~26 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~27 ~-1 ~20 ~27 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~20 ~28 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~29 ~-1 ~20 ~29 ~-1 ~20 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~30 ~-1 ~20 ~30 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~31 ~-1 ~20 ~31 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~20 ~32 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~33 ~-1 ~20 ~33 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~34 ~-1 ~20 ~34 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~35 ~-1 ~20 ~35 ~-1 ~20 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~36 ~-1 ~20 ~36 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~20 ~40 ~-1 ~20 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~21 ~0 ~-1 ~21 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~4 ~-1 ~21 ~4 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~21 ~8 ~-1 ~21 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~21 ~20 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~21 ~28 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~21 ~36 ~-1 ~21 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~40 ~-1 ~21 ~40 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~22 ~0 ~-1 ~22 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~4 ~-1 ~22 ~4 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~22 ~8 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~22 ~20 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~22 ~28 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~22 ~36 ~-1 ~22 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~22 ~40 ~-1 ~22 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~0 ~-1 ~23 ~0 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~23 ~4 ~-1 ~23 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~8 ~-1 ~23 ~8 ~-1 ~23 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~20 ~-1 ~23 ~20 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~23 ~28 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~23 ~36 ~-1 ~23 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~40 ~-1 ~23 ~40 ~-1 ~23 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~0 ~-1 ~24 ~0 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~24 ~4 ~-1 ~24 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~24 ~8 ~-1 ~24 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~9 ~-1 ~24 ~9 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~10 ~-1 ~24 ~10 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~11 ~-1 ~24 ~11 ~-1 ~24 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~24 ~12 ~-1 ~24 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~13 ~-1 ~24 ~13 ~-1 ~24 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~14 ~-1 ~24 ~14 ~-1 ~24 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~15 ~-1 ~24 ~15 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~24 ~16 ~-1 ~24 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~24 ~20 ~-1 ~24 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~24 ~24 ~-1 ~24 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~24 ~28 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~24 ~32 ~-1 ~24 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~36 ~-1 ~24 ~36 ~-1 ~24 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~24 ~40 ~-1 ~24 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~0 ~-1 ~25 ~0 ~-1 ~25 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~25 ~4 ~-1 ~25 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~25 ~8 ~-1 ~25 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~12 ~-1 ~25 ~12 ~-1 ~25 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~25 ~16 ~-1 ~25 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~20 ~-1 ~25 ~20 ~-1 ~25 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~24 ~-1 ~25 ~24 ~-1 ~25 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~28 ~-1 ~25 ~28 ~-1 ~25 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~25 ~32 ~-1 ~25 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~25 ~36 ~-1 ~25 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~25 ~40 ~-1 ~25 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~26 ~0 ~-1 ~26 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~26 ~4 ~-1 ~26 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~26 ~8 ~-1 ~26 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~26 ~12 ~-1 ~26 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~16 ~-1 ~26 ~16 ~-1 ~26 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~26 ~20 ~-1 ~26 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~26 ~24 ~-1 ~26 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~26 ~28 ~-1 ~26 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~26 ~32 ~-1 ~26 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~26 ~36 ~-1 ~26 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~26 ~40 ~-1 ~26 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~27 ~0 ~-1 ~27 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~27 ~4 ~-1 ~27 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~27 ~8 ~-1 ~27 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~27 ~12 ~-1 ~27 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~16 ~-1 ~27 ~16 ~-1 ~27 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~27 ~20 ~-1 ~27 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~27 ~24 ~-1 ~27 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~27 ~28 ~-1 ~27 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~27 ~32 ~-1 ~27 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~27 ~36 ~-1 ~27 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~27 ~40 ~-1 ~27 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~28 ~0 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~28 ~4 ~-1 ~28 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~28 ~8 ~-1 ~28 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~28 ~12 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~28 ~16 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~28 ~20 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~28 ~24 ~-1 ~28 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~28 ~-1 ~28 ~28 ~-1 ~28 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~32 ~-1 ~28 ~32 ~-1 ~28 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~36 ~-1 ~28 ~36 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~28 ~40 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~29 ~0 ~-1 ~29 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~29 ~4 ~-1 ~29 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~16 ~-1 ~29 ~16 ~-1 ~29 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~29 ~20 ~-1 ~29 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~29 ~24 ~-1 ~29 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~29 ~32 ~-1 ~29 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~36 ~-1 ~29 ~36 ~-1 ~29 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~29 ~40 ~-1 ~29 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~30 ~0 ~-1 ~30 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~4 ~-1 ~30 ~4 ~-1 ~30 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~16 ~-1 ~30 ~16 ~-1 ~30 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~30 ~20 ~-1 ~30 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~24 ~-1 ~30 ~24 ~-1 ~30 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~30 ~32 ~-1 ~30 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~36 ~-1 ~30 ~36 ~-1 ~30 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~30 ~40 ~-1 ~30 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~31 ~0 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~31 ~4 ~-1 ~31 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~16 ~-1 ~31 ~16 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~31 ~20 ~-1 ~31 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~31 ~24 ~-1 ~31 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~31 ~32 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~31 ~36 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~31 ~40 ~-1 ~31 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~32 ~0 ~-1 ~32 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~32 ~4 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~5 ~-1 ~32 ~5 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~6 ~-1 ~32 ~6 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~7 ~-1 ~32 ~7 ~-1 ~32 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~8 ~-1 ~32 ~8 ~-1 ~32 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~32 ~12 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~32 ~16 ~-1 ~32 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~17 ~-1 ~32 ~17 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~18 ~-1 ~32 ~18 ~-1 ~32 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~19 ~-1 ~32 ~19 ~-1 ~32 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~20 ~-1 ~32 ~20 ~-1 ~32 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~21 ~-1 ~32 ~21 ~-1 ~32 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~22 ~-1 ~32 ~22 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~23 ~-1 ~32 ~23 ~-1 ~32 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~32 ~24 ~-1 ~32 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~32 ~28 ~-1 ~32 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~29 ~-1 ~32 ~29 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~30 ~-1 ~32 ~30 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~31 ~-1 ~32 ~31 ~-1 ~32 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~32 ~32 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~32 ~36 ~-1 ~32 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~40 ~-1 ~32 ~40 ~-1 ~32 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~33 ~0 ~-1 ~33 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~4 ~-1 ~33 ~4 ~-1 ~33 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~33 ~12 ~-1 ~33 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~16 ~-1 ~33 ~16 ~-1 ~33 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~24 ~-1 ~33 ~24 ~-1 ~33 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~33 ~32 ~-1 ~33 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~33 ~40 ~-1 ~33 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~34 ~0 ~-1 ~34 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~34 ~4 ~-1 ~34 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~12 ~-1 ~34 ~12 ~-1 ~34 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~16 ~-1 ~34 ~16 ~-1 ~34 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~34 ~24 ~-1 ~34 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~32 ~-1 ~34 ~32 ~-1 ~34 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~34 ~40 ~-1 ~34 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~35 ~0 ~-1 ~35 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~35 ~4 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~35 ~12 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~35 ~16 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~35 ~24 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~35 ~32 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~35 ~40 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~36 ~0 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~36 ~4 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~36 ~8 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~9 ~-1 ~36 ~9 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~10 ~-1 ~36 ~10 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~11 ~-1 ~36 ~11 ~-1 ~36 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~12 ~-1 ~36 ~12 ~-1 ~36 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~16 ~-1 ~36 ~16 ~-1 ~36 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~17 ~-1 ~36 ~17 ~-1 ~36 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~18 ~-1 ~36 ~18 ~-1 ~36 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~19 ~-1 ~36 ~19 ~-1 ~36 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~20 ~-1 ~36 ~20 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~36 ~24 ~-1 ~36 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~25 ~-1 ~36 ~25 ~-1 ~36 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~26 ~-1 ~36 ~26 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~27 ~-1 ~36 ~27 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~36 ~28 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~36 ~32 ~-1 ~36 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~36 ~-1 ~36 ~36 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~36 ~40 ~-1 ~36 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~0 ~-1 ~37 ~0 ~-1 ~37 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~12 ~-1 ~37 ~12 ~-1 ~37 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~37 ~32 ~-1 ~37 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~36 ~-1 ~37 ~36 ~-1 ~37 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~37 ~40 ~-1 ~37 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~38 ~0 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~38 ~12 ~-1 ~38 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~38 ~32 ~-1 ~38 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~36 ~-1 ~38 ~36 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~38 ~40 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~39 ~0 ~-1 ~39 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~39 ~12 ~-1 ~39 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~39 ~32 ~-1 ~39 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~36 ~-1 ~39 ~36 ~-1 ~39 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~39 ~40 ~-1 ~39 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~40 ~0 ~-1 ~40 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~1 ~-1 ~40 ~1 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~2 ~-1 ~40 ~2 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~3 ~-1 ~40 ~3 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~40 ~4 ~-1 ~40 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~5 ~-1 ~40 ~5 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~6 ~-1 ~40 ~6 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~7 ~-1 ~40 ~7 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~40 ~8 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~9 ~-1 ~40 ~9 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~10 ~-1 ~40 ~10 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~11 ~-1 ~40 ~11 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~40 ~12 ~-1 ~40 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~13 ~-1 ~40 ~13 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~14 ~-1 ~40 ~14 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~15 ~-1 ~40 ~15 ~-1 ~40 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~16 ~-1 ~40 ~16 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~17 ~-1 ~40 ~17 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~18 ~-1 ~40 ~18 ~-1 ~40 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~19 ~-1 ~40 ~19 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~40 ~20 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~21 ~-1 ~40 ~21 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~22 ~-1 ~40 ~22 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~23 ~-1 ~40 ~23 ~-1 ~40 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~24 ~-1 ~40 ~24 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~25 ~-1 ~40 ~25 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~26 ~-1 ~40 ~26 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~27 ~-1 ~40 ~27 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~40 ~28 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~29 ~-1 ~40 ~29 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~30 ~-1 ~40 ~30 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~31 ~-1 ~40 ~31 ~-1 ~40 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~32 ~-1 ~40 ~32 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~33 ~-1 ~40 ~33 ~-1 ~40 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~34 ~-1 ~40 ~34 ~-1 ~40 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~35 ~-1 ~40 ~35 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~36 ~-1 ~40 ~36 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~37 ~-1 ~40 ~37 ~-1 ~40 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~38 ~-1 ~40 ~38 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~39 ~-1 ~40 ~39 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~40 ~40 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~0 ~0 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~1 ~-1 ~0 ~1 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~2 ~-1 ~0 ~2 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~3 ~-1 ~0 ~3 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~4 ~-1 ~0 ~4 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~5 ~-1 ~0 ~5 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~6 ~-1 ~0 ~6 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~7 ~-1 ~0 ~7 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~0 ~8 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~9 ~-1 ~0 ~9 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~10 ~-1 ~0 ~10 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~11 ~-1 ~0 ~11 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~0 ~12 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~13 ~-1 ~0 ~13 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~14 ~-1 ~0 ~14 ~-1 ~0 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~15 ~-1 ~0 ~15 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~0 ~16 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~17 ~-1 ~0 ~17 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~18 ~-1 ~0 ~18 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~19 ~-1 ~0 ~19 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~20 ~-1 ~0 ~20 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~21 ~-1 ~0 ~21 ~-1 ~0 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~22 ~-1 ~0 ~22 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~23 ~-1 ~0 ~23 ~-1 ~0 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~24 ~-1 ~0 ~24 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~25 ~-1 ~0 ~25 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~26 ~-1 ~0 ~26 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~27 ~-1 ~0 ~27 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~0 ~28 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~29 ~-1 ~0 ~29 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~30 ~-1 ~0 ~30 ~-1 ~0 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~31 ~-1 ~0 ~31 ~-1 ~0 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~0 ~32 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~33 ~-1 ~0 ~33 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~34 ~-1 ~0 ~34 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~35 ~-1 ~0 ~35 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~0 ~36 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~37 ~-1 ~0 ~37 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~38 ~-1 ~0 ~38 ~-1 ~0 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~39 ~-1 ~0 ~39 ~-1 ~0 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~0 ~40 ~-1 ~0 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~1 ~0 ~-1 ~1 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~4 ~-1 ~1 ~4 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~1 ~20 ~-1 ~1 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~24 ~-1 ~1 ~24 ~-1 ~1 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~1 ~28 ~-1 ~1 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~32 ~-1 ~1 ~32 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~1 ~40 ~-1 ~1 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~2 ~0 ~-1 ~2 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~4 ~-1 ~2 ~4 ~-1 ~2 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~20 ~-1 ~2 ~20 ~-1 ~2 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~24 ~-1 ~2 ~24 ~-1 ~2 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~28 ~-1 ~2 ~28 ~-1 ~2 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~2 ~32 ~-1 ~2 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~2 ~40 ~-1 ~2 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~3 ~0 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~3 ~4 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~3 ~20 ~-1 ~3 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~3 ~24 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~3 ~28 ~-1 ~3 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~3 ~32 ~-1 ~3 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~3 ~40 ~-1 ~3 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~0 ~-1 ~4 ~0 ~-1 ~4 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~4 ~4 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~4 ~8 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~9 ~-1 ~4 ~9 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~10 ~-1 ~4 ~10 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~11 ~-1 ~4 ~11 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~4 ~12 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~4 ~16 ~-1 ~4 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~4 ~20 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~4 ~24 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~4 ~28 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~4 ~32 ~-1 ~4 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~36 ~-1 ~4 ~36 ~-1 ~4 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~4 ~40 ~-1 ~4 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~5 ~0 ~-1 ~5 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~12 ~-1 ~5 ~12 ~-1 ~5 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~16 ~-1 ~5 ~16 ~-1 ~5 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~5 ~28 ~-1 ~5 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~36 ~-1 ~5 ~36 ~-1 ~5 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~5 ~40 ~-1 ~5 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~6 ~0 ~-1 ~6 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~6 ~12 ~-1 ~6 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~6 ~16 ~-1 ~6 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~6 ~28 ~-1 ~6 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~36 ~-1 ~6 ~36 ~-1 ~6 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~6 ~40 ~-1 ~6 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~7 ~0 ~-1 ~7 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~7 ~12 ~-1 ~7 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~16 ~-1 ~7 ~16 ~-1 ~7 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~28 ~-1 ~7 ~28 ~-1 ~7 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~36 ~-1 ~7 ~36 ~-1 ~7 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~7 ~40 ~-1 ~7 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~0 ~-1 ~8 ~0 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~1 ~-1 ~8 ~1 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~2 ~-1 ~8 ~2 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~3 ~-1 ~8 ~3 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~8 ~4 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~5 ~-1 ~8 ~5 ~-1 ~8 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~6 ~-1 ~8 ~6 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~7 ~-1 ~8 ~7 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~8 ~8 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~9 ~-1 ~8 ~9 ~-1 ~8 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~10 ~-1 ~8 ~10 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~11 ~-1 ~8 ~11 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~8 ~12 ~-1 ~8 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~13 ~-1 ~8 ~13 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~14 ~-1 ~8 ~14 ~-1 ~8 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~15 ~-1 ~8 ~15 ~-1 ~8 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~16 ~-1 ~8 ~16 ~-1 ~8 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~20 ~-1 ~8 ~20 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~21 ~-1 ~8 ~21 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~22 ~-1 ~8 ~22 ~-1 ~8 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~23 ~-1 ~8 ~23 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~8 ~24 ~-1 ~8 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~25 ~-1 ~8 ~25 ~-1 ~8 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~26 ~-1 ~8 ~26 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~27 ~-1 ~8 ~27 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~8 ~28 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~8 ~32 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~33 ~-1 ~8 ~33 ~-1 ~8 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~34 ~-1 ~8 ~34 ~-1 ~8 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~35 ~-1 ~8 ~35 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~8 ~36 ~-1 ~8 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~37 ~-1 ~8 ~37 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~38 ~-1 ~8 ~38 ~-1 ~8 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~39 ~-1 ~8 ~39 ~-1 ~8 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~8 ~40 ~-1 ~8 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~9 ~0 ~-1 ~9 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~16 ~-1 ~9 ~16 ~-1 ~9 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~20 ~-1 ~9 ~20 ~-1 ~9 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~24 ~-1 ~9 ~24 ~-1 ~9 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~32 ~-1 ~9 ~32 ~-1 ~9 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~9 ~36 ~-1 ~9 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~9 ~40 ~-1 ~9 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~0 ~-1 ~10 ~0 ~-1 ~10 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~16 ~-1 ~10 ~16 ~-1 ~10 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~10 ~20 ~-1 ~10 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~10 ~24 ~-1 ~10 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~10 ~32 ~-1 ~10 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~10 ~36 ~-1 ~10 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~10 ~40 ~-1 ~10 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~11 ~0 ~-1 ~11 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~11 ~16 ~-1 ~11 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~20 ~-1 ~11 ~20 ~-1 ~11 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~11 ~24 ~-1 ~11 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~11 ~32 ~-1 ~11 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~36 ~-1 ~11 ~36 ~-1 ~11 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~11 ~40 ~-1 ~11 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~12 ~0 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~12 ~4 ~-1 ~12 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~5 ~-1 ~12 ~5 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~6 ~-1 ~12 ~6 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~7 ~-1 ~12 ~7 ~-1 ~12 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~8 ~-1 ~12 ~8 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~12 ~12 ~-1 ~12 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~16 ~-1 ~12 ~16 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~12 ~20 ~-1 ~12 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~12 ~24 ~-1 ~12 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~28 ~-1 ~12 ~28 ~-1 ~12 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~32 ~-1 ~12 ~32 ~-1 ~12 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~12 ~36 ~-1 ~12 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~12 ~40 ~-1 ~12 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~13 ~0 ~-1 ~13 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~8 ~-1 ~13 ~8 ~-1 ~13 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~12 ~-1 ~13 ~12 ~-1 ~13 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~13 ~16 ~-1 ~13 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~13 ~24 ~-1 ~13 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~13 ~28 ~-1 ~13 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~40 ~-1 ~13 ~40 ~-1 ~13 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~14 ~0 ~-1 ~14 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~8 ~-1 ~14 ~8 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~14 ~12 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~14 ~16 ~-1 ~14 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~14 ~24 ~-1 ~14 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~28 ~-1 ~14 ~28 ~-1 ~14 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~40 ~-1 ~14 ~40 ~-1 ~14 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~15 ~0 ~-1 ~15 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~15 ~8 ~-1 ~15 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~15 ~12 ~-1 ~15 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~16 ~-1 ~15 ~16 ~-1 ~15 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~15 ~24 ~-1 ~15 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~15 ~28 ~-1 ~15 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~15 ~40 ~-1 ~15 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~16 ~0 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~16 ~4 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~16 ~8 ~-1 ~16 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~16 ~12 ~-1 ~16 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~16 ~-1 ~16 ~16 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~16 ~20 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~16 ~24 ~-1 ~16 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~25 ~-1 ~16 ~25 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~26 ~-1 ~16 ~26 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~27 ~-1 ~16 ~27 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~16 ~28 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~16 ~32 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~33 ~-1 ~16 ~33 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~34 ~-1 ~16 ~34 ~-1 ~16 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~35 ~-1 ~16 ~35 ~-1 ~16 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~36 ~-1 ~16 ~36 ~-1 ~16 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~37 ~-1 ~16 ~37 ~-1 ~16 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~38 ~-1 ~16 ~38 ~-1 ~16 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~39 ~-1 ~16 ~39 ~-1 ~16 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~16 ~40 ~-1 ~16 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~0 ~-1 ~17 ~0 ~-1 ~17 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~17 ~4 ~-1 ~17 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~17 ~8 ~-1 ~17 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~17 ~12 ~-1 ~17 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~16 ~-1 ~17 ~16 ~-1 ~17 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~20 ~-1 ~17 ~20 ~-1 ~17 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~17 ~24 ~-1 ~17 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~28 ~-1 ~17 ~28 ~-1 ~17 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~17 ~32 ~-1 ~17 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~17 ~40 ~-1 ~17 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~18 ~0 ~-1 ~18 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~18 ~4 ~-1 ~18 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~18 ~8 ~-1 ~18 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~18 ~12 ~-1 ~18 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~16 ~-1 ~18 ~16 ~-1 ~18 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~18 ~20 ~-1 ~18 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~18 ~24 ~-1 ~18 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~18 ~28 ~-1 ~18 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~18 ~32 ~-1 ~18 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~40 ~-1 ~18 ~40 ~-1 ~18 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~0 ~-1 ~19 ~0 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~19 ~4 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~19 ~8 ~-1 ~19 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~12 ~-1 ~19 ~12 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~19 ~16 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~19 ~20 ~-1 ~19 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~19 ~24 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~19 ~28 ~-1 ~19 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~19 ~32 ~-1 ~19 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~19 ~40 ~-1 ~19 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~0 ~-1 ~20 ~0 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~1 ~-1 ~20 ~1 ~-1 ~20 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~2 ~-1 ~20 ~2 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~3 ~-1 ~20 ~3 ~-1 ~20 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~4 ~-1 ~20 ~4 ~-1 ~20 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~8 ~-1 ~20 ~8 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~9 ~-1 ~20 ~9 ~-1 ~20 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~10 ~-1 ~20 ~10 ~-1 ~20 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~11 ~-1 ~20 ~11 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~20 ~12 ~-1 ~20 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~16 ~-1 ~20 ~16 ~-1 ~20 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~17 ~-1 ~20 ~17 ~-1 ~20 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~18 ~-1 ~20 ~18 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~19 ~-1 ~20 ~19 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~20 ~20 ~-1 ~20 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~20 ~24 ~-1 ~20 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~20 ~28 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~20 ~32 ~-1 ~20 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~36 ~-1 ~20 ~36 ~-1 ~20 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~20 ~40 ~-1 ~20 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~21 ~0 ~-1 ~21 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~4 ~-1 ~21 ~4 ~-1 ~21 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~21 ~8 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~21 ~12 ~-1 ~21 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~21 ~20 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~21 ~24 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~21 ~28 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~21 ~32 ~-1 ~21 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~36 ~-1 ~21 ~36 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~21 ~40 ~-1 ~21 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~22 ~0 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~22 ~4 ~-1 ~22 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~8 ~-1 ~22 ~8 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~22 ~12 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~22 ~20 ~-1 ~22 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~24 ~-1 ~22 ~24 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~22 ~28 ~-1 ~22 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~32 ~-1 ~22 ~32 ~-1 ~22 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~36 ~-1 ~22 ~36 ~-1 ~22 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~22 ~40 ~-1 ~22 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~23 ~0 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~23 ~4 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~23 ~8 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~23 ~12 ~-1 ~23 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~23 ~20 ~-1 ~23 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~24 ~-1 ~23 ~24 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~23 ~28 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~23 ~32 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~23 ~36 ~-1 ~23 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~23 ~40 ~-1 ~23 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~0 ~-1 ~24 ~0 ~-1 ~24 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~4 ~-1 ~24 ~4 ~-1 ~24 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~8 ~-1 ~24 ~8 ~-1 ~24 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~12 ~-1 ~24 ~12 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~24 ~16 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~17 ~-1 ~24 ~17 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~18 ~-1 ~24 ~18 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~19 ~-1 ~24 ~19 ~-1 ~24 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~20 ~-1 ~24 ~20 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~24 ~24 ~-1 ~24 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~24 ~28 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~24 ~32 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~33 ~-1 ~24 ~33 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~34 ~-1 ~24 ~34 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~35 ~-1 ~24 ~35 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~24 ~36 ~-1 ~24 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~24 ~40 ~-1 ~24 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~25 ~0 ~-1 ~25 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~25 ~12 ~-1 ~25 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~20 ~-1 ~25 ~20 ~-1 ~25 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~25 ~40 ~-1 ~25 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~26 ~0 ~-1 ~26 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~12 ~-1 ~26 ~12 ~-1 ~26 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~26 ~20 ~-1 ~26 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~26 ~40 ~-1 ~26 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~27 ~0 ~-1 ~27 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~12 ~-1 ~27 ~12 ~-1 ~27 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~20 ~-1 ~27 ~20 ~-1 ~27 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~27 ~40 ~-1 ~27 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~28 ~0 ~-1 ~28 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~1 ~-1 ~28 ~1 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~2 ~-1 ~28 ~2 ~-1 ~28 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~3 ~-1 ~28 ~3 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~28 ~4 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~28 ~8 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~28 ~12 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~13 ~-1 ~28 ~13 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~14 ~-1 ~28 ~14 ~-1 ~28 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~15 ~-1 ~28 ~15 ~-1 ~28 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~16 ~-1 ~28 ~16 ~-1 ~28 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~28 ~20 ~-1 ~28 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~24 ~-1 ~28 ~24 ~-1 ~28 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~25 ~-1 ~28 ~25 ~-1 ~28 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~26 ~-1 ~28 ~26 ~-1 ~28 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~27 ~-1 ~28 ~27 ~-1 ~28 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~28 ~28 ~-1 ~28 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~29 ~-1 ~28 ~29 ~-1 ~28 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~30 ~-1 ~28 ~30 ~-1 ~28 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~31 ~-1 ~28 ~31 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~28 ~32 ~-1 ~28 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~36 ~-1 ~28 ~36 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~37 ~-1 ~28 ~37 ~-1 ~28 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~38 ~-1 ~28 ~38 ~-1 ~28 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~39 ~-1 ~28 ~39 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~28 ~40 ~-1 ~28 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~29 ~0 ~-1 ~29 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~29 ~4 ~-1 ~29 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~29 ~8 ~-1 ~29 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~29 ~12 ~-1 ~29 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~29 ~16 ~-1 ~29 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~29 ~32 ~-1 ~29 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~29 ~40 ~-1 ~29 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~30 ~0 ~-1 ~30 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~4 ~-1 ~30 ~4 ~-1 ~30 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~30 ~8 ~-1 ~30 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~30 ~12 ~-1 ~30 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~30 ~16 ~-1 ~30 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~30 ~32 ~-1 ~30 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~30 ~40 ~-1 ~30 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~31 ~0 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~31 ~4 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~8 ~-1 ~31 ~8 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~31 ~12 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~31 ~16 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~31 ~32 ~-1 ~31 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~31 ~40 ~-1 ~31 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~32 ~0 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~32 ~4 ~-1 ~32 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~8 ~-1 ~32 ~8 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~32 ~12 ~-1 ~32 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~16 ~-1 ~32 ~16 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~32 ~20 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~32 ~24 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~32 ~28 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~32 ~32 ~-1 ~32 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~36 ~-1 ~32 ~36 ~-1 ~32 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~37 ~-1 ~32 ~37 ~-1 ~32 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~38 ~-1 ~32 ~38 ~-1 ~32 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~39 ~-1 ~32 ~39 ~-1 ~32 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~32 ~40 ~-1 ~32 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~33 ~0 ~-1 ~33 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~8 ~-1 ~33 ~8 ~-1 ~33 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~33 ~16 ~-1 ~33 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~33 ~20 ~-1 ~33 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~24 ~-1 ~33 ~24 ~-1 ~33 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~33 ~28 ~-1 ~33 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~33 ~32 ~-1 ~33 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~36 ~-1 ~33 ~36 ~-1 ~33 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~33 ~40 ~-1 ~33 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~34 ~0 ~-1 ~34 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~8 ~-1 ~34 ~8 ~-1 ~34 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~16 ~-1 ~34 ~16 ~-1 ~34 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~20 ~-1 ~34 ~20 ~-1 ~34 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~34 ~24 ~-1 ~34 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~28 ~-1 ~34 ~28 ~-1 ~34 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~34 ~32 ~-1 ~34 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~34 ~36 ~-1 ~34 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~40 ~-1 ~34 ~40 ~-1 ~34 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~0 ~-1 ~35 ~0 ~-1 ~35 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~35 ~8 ~-1 ~35 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~16 ~-1 ~35 ~16 ~-1 ~35 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~20 ~-1 ~35 ~20 ~-1 ~35 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~24 ~-1 ~35 ~24 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~35 ~28 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~35 ~32 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~35 ~36 ~-1 ~35 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~35 ~40 ~-1 ~35 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~36 ~0 ~-1 ~36 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~4 ~-1 ~36 ~4 ~-1 ~36 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~8 ~-1 ~36 ~8 ~-1 ~36 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~9 ~-1 ~36 ~9 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~10 ~-1 ~36 ~10 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~11 ~-1 ~36 ~11 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~36 ~12 ~-1 ~36 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~16 ~-1 ~36 ~16 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~36 ~20 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~36 ~24 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~28 ~-1 ~36 ~28 ~-1 ~36 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~32 ~-1 ~36 ~32 ~-1 ~36 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~36 ~-1 ~36 ~36 ~-1 ~36 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~36 ~40 ~-1 ~36 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~37 ~0 ~-1 ~37 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~37 ~4 ~-1 ~37 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~12 ~-1 ~37 ~12 ~-1 ~37 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~16 ~-1 ~37 ~16 ~-1 ~37 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~20 ~-1 ~37 ~20 ~-1 ~37 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~37 ~24 ~-1 ~37 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~37 ~28 ~-1 ~37 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~37 ~32 ~-1 ~37 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~37 ~40 ~-1 ~37 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~0 ~-1 ~38 ~0 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~38 ~4 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~38 ~12 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~38 ~16 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~20 ~-1 ~38 ~20 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~38 ~24 ~-1 ~38 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~28 ~-1 ~38 ~28 ~-1 ~38 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~32 ~-1 ~38 ~32 ~-1 ~38 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~40 ~-1 ~38 ~40 ~-1 ~38 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~0 ~-1 ~39 ~0 ~-1 ~39 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~39 ~4 ~-1 ~39 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~12 ~-1 ~39 ~12 ~-1 ~39 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~16 ~-1 ~39 ~16 ~-1 ~39 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~20 ~-1 ~39 ~20 ~-1 ~39 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~24 ~-1 ~39 ~24 ~-1 ~39 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~39 ~28 ~-1 ~39 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~32 ~-1 ~39 ~32 ~-1 ~39 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~40 ~-1 ~39 ~40 ~-1 ~39 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~0 ~-1 ~40 ~0 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~1 ~-1 ~40 ~1 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~2 ~-1 ~40 ~2 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~3 ~-1 ~40 ~3 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~4 ~-1 ~40 ~4 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~5 ~-1 ~40 ~5 ~-1 ~40 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~6 ~-1 ~40 ~6 ~-1 ~40 command_block{Command:'fill ~ ~2 ~ ~ ~2 ~ cobweb'} replace grass_block
+fill ~7 ~-1 ~40 ~7 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~8 ~-1 ~40 ~8 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~9 ~-1 ~40 ~9 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~10 ~-1 ~40 ~10 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~11 ~-1 ~40 ~11 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~12 ~-1 ~40 ~12 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~13 ~-1 ~40 ~13 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~14 ~-1 ~40 ~14 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~15 ~-1 ~40 ~15 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~16 ~-1 ~40 ~16 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~17 ~-1 ~40 ~17 ~-1 ~40 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~18 ~-1 ~40 ~18 ~-1 ~40 command_block{Command:'effect give @a nausea 8'} replace grass_block
+fill ~19 ~-1 ~40 ~19 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~20 ~-1 ~40 ~20 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~21 ~-1 ~40 ~21 ~-1 ~40 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~22 ~-1 ~40 ~22 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~23 ~-1 ~40 ~23 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~24 ~-1 ~40 ~24 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~25 ~-1 ~40 ~25 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~26 ~-1 ~40 ~26 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~27 ~-1 ~40 ~27 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~28 ~-1 ~40 ~28 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~29 ~-1 ~40 ~29 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 granite replace black_concrete'} replace grass_block
+fill ~30 ~-1 ~40 ~30 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~31 ~-1 ~40 ~31 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~32 ~-1 ~40 ~32 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~33 ~-1 ~40 ~33 ~-1 ~40 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~34 ~-1 ~40 ~34 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 andesite replace black_concrete'} replace grass_block
+fill ~35 ~-1 ~40 ~35 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 stone replace black_concrete'} replace grass_block
+fill ~36 ~-1 ~40 ~36 ~-1 ~40 command_block{Command:'setblock ~ ~ ~ glowstone'} replace grass_block
+fill ~37 ~-1 ~40 ~37 ~-1 ~40 command_block{Command:'summon minecraft:zombie'} replace grass_block
+fill ~38 ~-1 ~40 ~38 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 diorite replace black_concrete'} replace grass_block
+fill ~39 ~-1 ~40 ~39 ~-1 ~40 command_block{Command:'summon minecraft:lightning_bolt ~-1 ~ ~'} replace grass_block
+fill ~40 ~-1 ~40 ~40 ~-1 ~40 command_block{Command:'fill ~2 ~ ~ ~-2 ~10 ~-10 glowstone replace black_concrete'} replace grass_block
+fill ~20 ~ ~0 ~0 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~1 ~ ~0 ~1 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~2 ~ ~0 ~2 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~3 ~ ~0 ~3 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~0 ~4 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~5 ~ ~0 ~5 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~6 ~ ~0 ~6 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~7 ~ ~0 ~7 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~0 ~8 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~0 ~9 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~0 ~10 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~0 ~11 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~0 ~12 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~13 ~ ~0 ~13 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~14 ~ ~0 ~14 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~15 ~ ~0 ~15 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~0 ~16 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~0 ~17 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~0 ~18 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~0 ~19 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~0 ~20 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~21 ~ ~0 ~21 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~22 ~ ~0 ~22 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~23 ~ ~0 ~23 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~0 ~24 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~0 ~25 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~0 ~26 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~0 ~27 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~0 ~28 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~0 ~29 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~0 ~30 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~0 ~31 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~0 ~32 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~0 ~33 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~0 ~34 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~0 ~35 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~0 ~36 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~0 ~37 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~0 ~38 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~0 ~39 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~0 ~40 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~1 ~0 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~1 ~4 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~1 ~8 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~1 ~12 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~1 ~16 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~1 ~20 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~1 ~28 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~1 ~32 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~1 ~36 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~1 ~40 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~2 ~0 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~2 ~4 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~2 ~8 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~2 ~12 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~2 ~16 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~2 ~20 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~2 ~28 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~2 ~32 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~2 ~36 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~2 ~40 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~3 ~0 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~3 ~4 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~3 ~8 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~3 ~12 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~3 ~16 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~3 ~20 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~3 ~28 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~3 ~32 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~3 ~36 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~3 ~40 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~4 ~0 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~4 ~4 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~4 ~8 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~4 ~12 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~4 ~16 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~4 ~20 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~4 ~24 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~4 ~25 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~4 ~26 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~4 ~27 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~4 ~28 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~4 ~32 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~4 ~36 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~4 ~40 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~5 ~0 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~5 ~8 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~5 ~20 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~5 ~28 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~5 ~32 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~5 ~40 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~6 ~0 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~6 ~8 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~6 ~20 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~6 ~28 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~6 ~32 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~6 ~40 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~7 ~0 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~7 ~8 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~7 ~20 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~7 ~28 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~7 ~32 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~7 ~40 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~8 ~0 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~8 ~4 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~8 ~8 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~8 ~12 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~8 ~16 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~8 ~17 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~8 ~18 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~8 ~19 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~8 ~20 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~21 ~ ~8 ~21 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~22 ~ ~8 ~22 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~23 ~ ~8 ~23 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~8 ~24 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~8 ~28 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~8 ~32 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~8 ~33 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~8 ~34 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~8 ~35 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~8 ~36 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~8 ~40 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~9 ~0 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~9 ~4 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~9 ~8 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~9 ~12 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~9 ~16 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~9 ~20 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~9 ~32 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~9 ~40 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~10 ~0 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~10 ~4 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~10 ~8 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~10 ~12 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~10 ~16 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~10 ~20 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~10 ~32 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~10 ~40 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~11 ~0 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~11 ~4 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~11 ~8 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~11 ~12 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~11 ~16 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~11 ~20 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~11 ~32 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~11 ~40 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~12 ~0 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~12 ~4 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~5 ~ ~12 ~5 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~6 ~ ~12 ~6 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~7 ~ ~12 ~7 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~12 ~8 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~12 ~9 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~12 ~10 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~12 ~11 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~12 ~12 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~12 ~16 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~12 ~20 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~12 ~24 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~12 ~28 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~12 ~29 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~12 ~30 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~12 ~31 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~12 ~32 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~12 ~36 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~12 ~37 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~12 ~38 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~12 ~39 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~12 ~40 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~13 ~0 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~13 ~4 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~13 ~8 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~13 ~20 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~13 ~24 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~13 ~28 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~13 ~36 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~13 ~40 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~14 ~0 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~14 ~4 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~14 ~8 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~14 ~20 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~14 ~24 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~14 ~28 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~14 ~36 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~14 ~40 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~15 ~0 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~15 ~4 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~15 ~8 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~15 ~20 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~15 ~24 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~15 ~28 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~15 ~36 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~15 ~40 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~16 ~0 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~16 ~4 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~16 ~8 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~16 ~12 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~16 ~16 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~16 ~20 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~21 ~ ~16 ~21 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~22 ~ ~16 ~22 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~23 ~ ~16 ~23 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~16 ~24 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~16 ~28 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~16 ~29 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~16 ~30 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~16 ~31 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~16 ~32 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~16 ~36 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~16 ~40 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~17 ~0 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~17 ~8 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~17 ~12 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~17 ~16 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~17 ~32 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~17 ~40 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~18 ~0 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~18 ~8 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~18 ~12 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~18 ~16 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~18 ~32 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~18 ~40 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~19 ~0 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~19 ~8 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~19 ~12 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~19 ~16 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~19 ~32 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~19 ~40 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~20 ~0 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~1 ~ ~20 ~1 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~2 ~ ~20 ~2 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~3 ~ ~20 ~3 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~20 ~4 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~20 ~8 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~20 ~9 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~20 ~10 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~20 ~11 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~20 ~12 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~20 ~16 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~20 ~17 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~20 ~18 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~20 ~19 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~20 ~20 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~20 ~24 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~20 ~25 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~20 ~26 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~20 ~27 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~20 ~28 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~20 ~29 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~20 ~30 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~20 ~31 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~20 ~32 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~20 ~33 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~20 ~34 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~20 ~35 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~20 ~36 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~20 ~40 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~21 ~0 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~21 ~4 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~21 ~8 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~21 ~20 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~21 ~28 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~21 ~36 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~21 ~40 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~22 ~0 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~22 ~4 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~22 ~8 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~22 ~20 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~22 ~28 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~22 ~36 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~22 ~40 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~23 ~0 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~23 ~4 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~23 ~8 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~23 ~20 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~23 ~28 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~23 ~36 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~23 ~40 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~24 ~0 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~24 ~4 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~24 ~8 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~24 ~9 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~24 ~10 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~24 ~11 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~24 ~12 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~13 ~ ~24 ~13 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~14 ~ ~24 ~14 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~15 ~ ~24 ~15 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~24 ~16 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~24 ~20 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~24 ~24 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~24 ~28 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~24 ~32 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~24 ~36 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~24 ~40 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~25 ~0 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~25 ~4 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~25 ~8 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~25 ~12 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~25 ~16 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~25 ~20 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~25 ~24 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~25 ~28 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~25 ~32 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~25 ~36 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~25 ~40 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~26 ~0 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~26 ~4 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~26 ~8 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~26 ~12 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~26 ~16 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~26 ~20 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~26 ~24 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~26 ~28 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~26 ~32 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~26 ~36 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~26 ~40 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~27 ~0 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~27 ~4 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~27 ~8 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~27 ~12 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~27 ~16 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~27 ~20 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~27 ~24 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~27 ~28 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~27 ~32 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~27 ~36 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~27 ~40 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~28 ~0 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~28 ~4 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~28 ~8 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~28 ~12 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~28 ~16 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~28 ~20 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~28 ~24 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~28 ~28 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~28 ~32 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~28 ~36 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~28 ~40 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~29 ~0 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~29 ~4 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~29 ~16 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~29 ~20 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~29 ~24 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~29 ~32 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~29 ~36 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~29 ~40 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~30 ~0 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~30 ~4 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~30 ~16 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~30 ~20 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~30 ~24 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~30 ~32 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~30 ~36 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~30 ~40 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~31 ~0 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~31 ~4 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~31 ~16 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~31 ~20 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~31 ~24 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~31 ~32 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~31 ~36 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~31 ~40 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~32 ~0 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~32 ~4 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~5 ~ ~32 ~5 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~6 ~ ~32 ~6 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~7 ~ ~32 ~7 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~32 ~8 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~32 ~12 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~32 ~16 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~32 ~17 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~32 ~18 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~32 ~19 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~32 ~20 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~21 ~ ~32 ~21 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~22 ~ ~32 ~22 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~23 ~ ~32 ~23 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~32 ~24 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~32 ~28 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~32 ~29 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~32 ~30 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~32 ~31 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~32 ~32 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~32 ~36 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~32 ~40 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~33 ~0 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~33 ~4 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~33 ~12 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~33 ~16 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~33 ~24 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~33 ~32 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~33 ~40 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~34 ~0 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~34 ~4 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~34 ~12 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~34 ~16 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~34 ~24 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~34 ~32 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~34 ~40 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~35 ~0 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~35 ~4 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~35 ~12 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~35 ~16 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~35 ~24 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~35 ~32 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~35 ~40 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~36 ~0 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~36 ~4 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~36 ~8 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~36 ~9 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~36 ~10 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~36 ~11 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~36 ~12 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~36 ~16 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~36 ~17 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~36 ~18 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~36 ~19 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~36 ~20 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~36 ~24 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~36 ~25 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~36 ~26 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~36 ~27 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~36 ~28 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~36 ~32 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~36 ~36 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~36 ~40 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~37 ~0 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~37 ~12 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~37 ~32 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~37 ~36 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~37 ~40 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~38 ~0 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~38 ~12 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~38 ~32 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~38 ~36 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~38 ~40 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~39 ~0 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~39 ~12 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~39 ~32 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~39 ~36 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~39 ~40 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~40 ~0 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~1 ~ ~40 ~1 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~2 ~ ~40 ~2 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~3 ~ ~40 ~3 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~40 ~4 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~5 ~ ~40 ~5 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~6 ~ ~40 ~6 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~7 ~ ~40 ~7 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~40 ~8 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~40 ~9 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~40 ~10 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~40 ~11 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~40 ~12 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~13 ~ ~40 ~13 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~14 ~ ~40 ~14 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~15 ~ ~40 ~15 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~40 ~16 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~40 ~17 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~40 ~18 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~40 ~19 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~40 ~20 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~21 ~ ~40 ~21 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~22 ~ ~40 ~22 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~23 ~ ~40 ~23 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~40 ~24 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~40 ~25 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~40 ~26 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~40 ~27 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~40 ~28 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~40 ~29 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~40 ~30 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~40 ~31 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~40 ~32 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~40 ~33 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~40 ~34 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~40 ~35 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~40 ~36 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~40 ~37 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~40 ~38 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~40 ~39 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~40 ~40 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~0 ~0 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~1 ~ ~0 ~1 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~2 ~ ~0 ~2 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~3 ~ ~0 ~3 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~0 ~4 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~5 ~ ~0 ~5 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~6 ~ ~0 ~6 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~7 ~ ~0 ~7 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~0 ~8 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~0 ~9 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~0 ~10 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~0 ~11 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~0 ~12 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~13 ~ ~0 ~13 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~14 ~ ~0 ~14 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~15 ~ ~0 ~15 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~0 ~16 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~0 ~17 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~0 ~18 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~0 ~19 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~0 ~20 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~21 ~ ~0 ~21 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~22 ~ ~0 ~22 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~23 ~ ~0 ~23 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~0 ~24 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~0 ~25 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~0 ~26 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~0 ~27 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~0 ~28 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~0 ~29 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~0 ~30 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~0 ~31 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~0 ~32 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~0 ~33 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~0 ~34 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~0 ~35 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~0 ~36 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~0 ~37 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~0 ~38 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~0 ~39 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~0 ~40 ~0 ~0 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~1 ~0 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~1 ~4 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~1 ~20 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~1 ~24 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~1 ~28 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~1 ~32 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~1 ~40 ~0 ~1 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~2 ~0 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~2 ~4 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~2 ~20 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~2 ~24 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~2 ~28 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~2 ~32 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~2 ~40 ~0 ~2 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~3 ~0 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~3 ~4 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~3 ~20 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~3 ~24 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~3 ~28 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~3 ~32 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~3 ~40 ~0 ~3 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~4 ~0 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~4 ~4 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~4 ~8 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~4 ~9 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~4 ~10 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~4 ~11 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~4 ~12 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~4 ~16 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~4 ~20 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~4 ~24 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~4 ~28 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~4 ~32 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~4 ~36 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~4 ~40 ~0 ~4 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~5 ~0 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~5 ~12 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~5 ~16 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~5 ~28 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~5 ~36 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~5 ~40 ~0 ~5 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~6 ~0 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~6 ~12 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~6 ~16 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~6 ~28 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~6 ~36 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~6 ~40 ~0 ~6 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~7 ~0 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~7 ~12 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~7 ~16 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~7 ~28 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~7 ~36 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~7 ~40 ~0 ~7 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~8 ~0 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~1 ~ ~8 ~1 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~2 ~ ~8 ~2 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~3 ~ ~8 ~3 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~8 ~4 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~5 ~ ~8 ~5 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~6 ~ ~8 ~6 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~7 ~ ~8 ~7 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~8 ~8 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~8 ~9 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~8 ~10 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~8 ~11 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~8 ~12 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~13 ~ ~8 ~13 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~14 ~ ~8 ~14 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~15 ~ ~8 ~15 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~8 ~16 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~8 ~20 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~21 ~ ~8 ~21 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~22 ~ ~8 ~22 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~23 ~ ~8 ~23 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~8 ~24 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~8 ~25 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~8 ~26 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~8 ~27 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~8 ~28 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~8 ~32 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~8 ~33 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~8 ~34 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~8 ~35 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~8 ~36 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~8 ~37 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~8 ~38 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~8 ~39 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~8 ~40 ~0 ~8 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~9 ~0 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~9 ~16 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~9 ~20 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~9 ~24 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~9 ~32 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~9 ~36 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~9 ~40 ~0 ~9 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~10 ~0 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~10 ~16 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~10 ~20 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~10 ~24 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~10 ~32 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~10 ~36 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~10 ~40 ~0 ~10 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~11 ~0 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~11 ~16 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~11 ~20 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~11 ~24 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~11 ~32 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~11 ~36 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~11 ~40 ~0 ~11 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~12 ~0 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~12 ~4 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~5 ~ ~12 ~5 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~6 ~ ~12 ~6 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~7 ~ ~12 ~7 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~12 ~8 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~12 ~12 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~12 ~16 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~12 ~20 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~12 ~24 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~12 ~28 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~12 ~32 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~12 ~36 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~12 ~40 ~0 ~12 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~13 ~0 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~13 ~8 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~13 ~12 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~13 ~16 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~13 ~24 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~13 ~28 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~13 ~40 ~0 ~13 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~14 ~0 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~14 ~8 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~14 ~12 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~14 ~16 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~14 ~24 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~14 ~28 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~14 ~40 ~0 ~14 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~15 ~0 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~15 ~8 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~15 ~12 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~15 ~16 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~15 ~24 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~15 ~28 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~15 ~40 ~0 ~15 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~16 ~0 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~16 ~4 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~16 ~8 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~16 ~12 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~16 ~16 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~16 ~20 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~16 ~24 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~16 ~25 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~16 ~26 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~16 ~27 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~16 ~28 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~16 ~32 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~16 ~33 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~16 ~34 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~16 ~35 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~16 ~36 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~16 ~37 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~16 ~38 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~16 ~39 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~16 ~40 ~0 ~16 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~17 ~0 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~17 ~4 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~17 ~8 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~17 ~12 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~17 ~16 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~17 ~20 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~17 ~24 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~17 ~28 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~17 ~32 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~17 ~40 ~0 ~17 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~18 ~0 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~18 ~4 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~18 ~8 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~18 ~12 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~18 ~16 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~18 ~20 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~18 ~24 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~18 ~28 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~18 ~32 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~18 ~40 ~0 ~18 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~19 ~0 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~19 ~4 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~19 ~8 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~19 ~12 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~19 ~16 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~19 ~20 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~19 ~24 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~19 ~28 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~19 ~32 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~19 ~40 ~0 ~19 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~20 ~0 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~1 ~ ~20 ~1 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~2 ~ ~20 ~2 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~3 ~ ~20 ~3 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~20 ~4 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~20 ~8 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~20 ~9 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~20 ~10 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~20 ~11 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~20 ~12 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~20 ~16 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~20 ~17 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~20 ~18 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~20 ~19 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~20 ~20 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~20 ~24 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~20 ~28 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~20 ~32 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~20 ~36 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~20 ~40 ~0 ~20 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~21 ~0 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~21 ~4 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~21 ~8 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~21 ~12 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~21 ~20 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~21 ~24 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~21 ~28 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~21 ~32 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~21 ~36 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~21 ~40 ~0 ~21 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~22 ~0 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~22 ~4 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~22 ~8 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~22 ~12 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~22 ~20 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~22 ~24 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~22 ~28 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~22 ~32 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~22 ~36 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~22 ~40 ~0 ~22 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~23 ~0 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~23 ~4 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~23 ~8 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~23 ~12 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~23 ~20 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~23 ~24 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~23 ~28 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~23 ~32 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~23 ~36 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~23 ~40 ~0 ~23 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~24 ~0 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~24 ~4 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~24 ~8 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~24 ~12 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~24 ~16 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~24 ~17 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~24 ~18 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~24 ~19 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~24 ~20 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~24 ~24 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~24 ~28 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~24 ~32 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~24 ~33 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~24 ~34 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~24 ~35 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~24 ~36 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~24 ~40 ~0 ~24 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~25 ~0 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~25 ~12 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~25 ~20 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~25 ~40 ~0 ~25 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~26 ~0 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~26 ~12 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~26 ~20 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~26 ~40 ~0 ~26 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~27 ~0 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~27 ~12 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~27 ~20 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~27 ~40 ~0 ~27 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~28 ~0 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~1 ~ ~28 ~1 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~2 ~ ~28 ~2 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~3 ~ ~28 ~3 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~28 ~4 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~28 ~8 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~28 ~12 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~13 ~ ~28 ~13 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~14 ~ ~28 ~14 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~15 ~ ~28 ~15 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~28 ~16 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~28 ~20 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~28 ~24 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~28 ~25 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~28 ~26 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~28 ~27 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~28 ~28 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~28 ~29 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~28 ~30 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~28 ~31 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~28 ~32 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~28 ~36 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~28 ~37 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~28 ~38 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~28 ~39 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~28 ~40 ~0 ~28 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~29 ~0 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~29 ~4 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~29 ~8 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~29 ~12 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~29 ~16 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~29 ~32 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~29 ~40 ~0 ~29 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~30 ~0 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~30 ~4 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~30 ~8 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~30 ~12 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~30 ~16 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~30 ~32 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~30 ~40 ~0 ~30 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~31 ~0 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~31 ~4 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~31 ~8 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~31 ~12 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~31 ~16 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~31 ~32 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~31 ~40 ~0 ~31 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~32 ~0 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~32 ~4 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~32 ~8 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~32 ~12 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~32 ~16 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~32 ~20 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~32 ~24 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~32 ~28 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~32 ~32 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~32 ~36 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~32 ~37 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~32 ~38 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~32 ~39 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~32 ~40 ~0 ~32 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~33 ~0 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~33 ~8 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~33 ~16 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~33 ~20 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~33 ~24 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~33 ~28 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~33 ~32 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~33 ~36 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~33 ~40 ~0 ~33 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~34 ~0 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~34 ~8 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~34 ~16 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~34 ~20 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~34 ~24 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~34 ~28 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~34 ~32 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~34 ~36 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~34 ~40 ~0 ~34 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~35 ~0 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~35 ~8 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~35 ~16 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~35 ~20 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~35 ~24 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~35 ~28 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~35 ~32 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~35 ~36 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~35 ~40 ~0 ~35 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~36 ~0 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~36 ~4 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~36 ~8 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~36 ~9 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~36 ~10 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~36 ~11 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~36 ~12 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~36 ~16 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~36 ~20 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~36 ~24 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~36 ~28 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~36 ~32 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~36 ~36 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~36 ~40 ~0 ~36 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~37 ~0 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~37 ~4 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~37 ~12 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~37 ~16 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~37 ~20 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~37 ~24 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~37 ~28 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~37 ~32 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~37 ~40 ~0 ~37 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~38 ~0 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~38 ~4 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~38 ~12 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~38 ~16 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~38 ~20 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~38 ~24 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~38 ~28 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~38 ~32 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~38 ~40 ~0 ~38 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~39 ~0 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~39 ~4 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~39 ~12 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~39 ~16 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~39 ~20 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~39 ~24 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~39 ~28 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~39 ~32 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~39 ~40 ~0 ~39 polished_blackstone_pressure_plate keep
+fill ~0 ~ ~40 ~0 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~1 ~ ~40 ~1 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~2 ~ ~40 ~2 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~3 ~ ~40 ~3 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~4 ~ ~40 ~4 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~5 ~ ~40 ~5 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~6 ~ ~40 ~6 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~7 ~ ~40 ~7 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~8 ~ ~40 ~8 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~9 ~ ~40 ~9 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~10 ~ ~40 ~10 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~11 ~ ~40 ~11 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~12 ~ ~40 ~12 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~13 ~ ~40 ~13 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~14 ~ ~40 ~14 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~15 ~ ~40 ~15 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~16 ~ ~40 ~16 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~17 ~ ~40 ~17 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~18 ~ ~40 ~18 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~19 ~ ~40 ~19 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~20 ~ ~40 ~20 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~21 ~ ~40 ~21 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~22 ~ ~40 ~22 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~23 ~ ~40 ~23 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~24 ~ ~40 ~24 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~25 ~ ~40 ~25 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~26 ~ ~40 ~26 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~27 ~ ~40 ~27 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~28 ~ ~40 ~28 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~29 ~ ~40 ~29 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~30 ~ ~40 ~30 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~31 ~ ~40 ~31 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~32 ~ ~40 ~32 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~33 ~ ~40 ~33 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~34 ~ ~40 ~34 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~35 ~ ~40 ~35 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~36 ~ ~40 ~36 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~37 ~ ~40 ~37 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~38 ~ ~40 ~38 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~39 ~ ~40 ~39 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~40 ~ ~40 ~40 ~0 ~40 polished_blackstone_pressure_plate keep
+fill ~0 ~-1 ~0 ~40 ~-1 ~40 blackstone replace grass_block
+fill ~0 ~ ~0 ~40 ~ ~40 rail keep
